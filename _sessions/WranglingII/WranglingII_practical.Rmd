@@ -3,8 +3,8 @@ title: "Wrangling II"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
-      <font style='font-style:normal'>Explorative Datenanalyse mit R @ CSS</font><br>
-      <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+      <font style='font-style:normal'>Explorative Datenanalyse mit R</font><br>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -67,7 +67,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte bereits die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle  Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `BaselRBootcamp` R project. Es sollte bereits die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle  Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
 
 2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Wrangling II Practical" als Kommentare an den Anfang des Skripts.
 
@@ -92,7 +92,7 @@ library(tidyverse)
 
 ### B - Transformation von *Long* zu *Wide* Format 
 
-In diesem Practical verwenden wir zunächst den `bevoelkerung.csv` Datensatz. Er enthält die Einwohnerzahlen verschiedener schweizer Städte von 1930 bis 2011. Im `Datensätze` Tab findest du eine Auflistung und eine kurze Beschreibung der im Datensatz enthaltenen Variablen. 
+In diesem Practical verwenden wir zunächst den `bevoelkerung.csv` Datensatz. Er enthält die Einwohnerzahlen verschiedener Schweizer Städte von 1930 bis 2011. Im `Datensätze` Tab findest du eine Auflistung und eine kurze Beschreibung der im Datensatz enthaltenen Variablen. 
 
 5. Lese den Datensatz mit der `read_csv()` Funktion in R ein und speichere ihn unter dem Namen `bevoelkerung`.
 
@@ -514,7 +514,7 @@ basel %>%
 |File | Zeilen | Spalten | Beschreibung |
 |:----|:-----|:------|:-----------------------------------------|
 |[kc_house.csv](https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/baselrbootcamp_data/kc_house.csv) | 21613 | 11|Verkaufspreise von Häusern in King County zwischen Mai 2014 und Mai 2015. |
-|[bevoelkerung.csv](https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/baselrbootcamp_data/kc_house.csv) | 161 | 10|Einwohnerzahlen schweizer Städte von 1930 bis 2011. |
+|[bevoelkerung.csv](https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/baselrbootcamp_data/kc_house.csv) | 161 | 10|Einwohnerzahlen Schweizer Städte von 1930 bis 2011. |
 
 #### kc_house.csv
 
