@@ -15,7 +15,7 @@ author: "
         <i class='fab fa-linkedin' style='font-size: 1em;'></i>
       </a>
       <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
-        <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp @ CSS Versicherung</font>
+        <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp</font>
       </a>
       <br>
       <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><font style='font-style:normal;font-size:20px;padding-left:9.3px'>Februar 2020</font>
@@ -27,6 +27,12 @@ output:
 ---
 
 <br>
+
+### Wifi
+
+##### [**Instructions**](https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/wifi_instruct.png)
+
+### Downloads
 
 ##### [Data sets](https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/TheRBootcamp_EDA_2020Feb_data.zip)
 
@@ -42,7 +48,6 @@ output:
 |2|  Wrangling<br>[Folien](_sessions/Wrangling/Wrangling.html), [Practical](_sessions/Wrangling/Wrangling_practical.html) | Plotting II<br>[Folien](_sessions/PlottingII/PlottingII.html), [Practical](_sessions/PlottingII/PlottingII_practical.html)|
 |3|   Wrangling II<br>[Folien](_sessions/WranglingII/WranglingII.html), [Practical](_sessions/WranglingII/WranglingII_practical.html) | Plotting III<br>[Folien](_sessions/PlottingIII/PlottingIII.html), [Practical](_sessions/PlottingIII/PlottingIII_practical.html) |
 ||    | Nächste Schritte<br>[Folien](_sessions/NextSteps/NextSteps.html) |
-<br>
 
 
 <!---
