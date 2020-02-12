@@ -138,7 +138,7 @@ patienten_ergebnisse = patienten %>%
   <li class="m2"><span><high>Organisation</high>
   <br><br>
   <ul class="level">
-    <li><span><mono>starts_with(), contains()</mono></span></li>
+    <li><span><mono>starts_with(), contains(), :</mono></span></li>
     <li><span><mono>pivot_longer(), pivot_wider()</mono></span></li>
   </ul>
   </span></li>
