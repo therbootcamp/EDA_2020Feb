@@ -3,8 +3,8 @@ title: "Data"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
-      <font style='font-style:normal'>Explorative Datenanalyse mit R @ CSS</font><br>
-      <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+      <font style='font-style:normal'>Explorative Datenanalyse mit R</font><br>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -36,8 +36,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE, 
-                      eval = TRUE, 
+                      echo = FALSE, 
+                      eval = FALSE, 
                       warning = FALSE)
 
 options(digits = 3)
@@ -555,7 +555,7 @@ write_csv(x = sleep,
           path = "1_Data/sleep.csv")
 ```
 
-### X - Challenges
+### X - Mit `logical`s rechnen
 
 1. Verwende `sum()` und `==` um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen. 
 
@@ -592,7 +592,6 @@ mean(sleep$age[which(sleep$alchohol > 1)], na.rm = TRUE)
 # Mittleres Alter für not > 1 Drink
 mean(sleep$age[which(!sleep$alchohol > 1)], na.rm = TRUE)
 ```
-
 
 ## Beispiele
 

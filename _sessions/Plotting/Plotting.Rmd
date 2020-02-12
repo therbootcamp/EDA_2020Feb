@@ -1,9 +1,9 @@
 ---
 title: "Plotting"
 author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Dezember 2019"
+date: "Februar 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Explorative Datenanalyse mit R | Februar 2020
       </font>
     </a>
     </span>
@@ -208,7 +208,7 @@ plot(x = baselers$groesse,
 
 ---
 
-# Problems with Base R plotting
+# Probleme mit Base R plotting
 
 .pull-left4[
 
@@ -282,13 +282,11 @@ Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-per
 
 <ul>
   <li class="m1"><span><high>data</high>: Der Datensatz</span></li>
-  <li class="m2"><span><high>mapping</high>: Grobe Struktur des Plots
-  <br><br>
+  <li class="m2"><span><high>mapping</high>: Grobe Struktur des Plots</span></li>
   <ul class="level">
     <li><span>Was soll auf die Achsen?</span></li>
     <li><span>Was soll Grösse/Farbe repräsentieren?</span></li>
   </ul>
-  </span></li>
   <li class="m3"><span><high>geoms</high>: Objekte im Plot</high></span></li>
   <li class="m4"><span><high>labs</high>: Annotierung des Plots</high></span></li>
   <li class="m5"><span><high>themes</high>: Ästhetische Gestaltung</high></span></li>
@@ -319,44 +317,35 @@ goal
 
 ---
 
-# Ziel: Diesen Plot kreieren
+# Wir kreieren diesen Plot
 
 .pull-left45[
 
 <ul>
-  <li class="m1"><span><high>data</high>
-  <br>
+  <li class="m1"><span><high>data</high></span></li>
   <ul class="level">
     <li><span>Der <mono>mpg</mono> Datensatz</span></li>
   </ul>
-  </span></li>
-  <li class="m2"><span><high>mapping</high>
-  <br>
+  <li class="m2"><span><high>mapping</high></span></li>
   <ul class="level">
     <li><span>Hubraum auf die x-Achse</span></li>
     <li><span>Meilen pro Gallone auf die y-Achse</span></li>
     <li><span>Farbe der Objekte gemäss Autoklasse</span></li>
   </ul>
-  </span></li>
-  <li class="m3"><span><high>geoms</high>
-  <br>
+  <li class="m3"><span><high>geoms</high></span></li>
   <ul class="level">
     <li><span>Daten als Punkte</span></li>
     <li><span>Ergänze Regressionslinie</span></li>
   </ul>
-  </span></li>
-  <li class="m4"><span><high>labs</high>
-  <br>
+  <li class="m4"><span><high>labs</high></span></li>
   <ul class="level">
     <li><span>Beschriftungen Achsen und Titel</span></li>
   </ul>
-  </span></li>
-    <li class="m5"><span><high>themes</high>
-  <br>
+  <li class="m5"><span><high>themes</high></span></li>
   <ul class="level">
     <li><span>Schwarz-weiss Ästhetik</span></li>
   </ul>
-  </span></li>
+  
 </ul>
 
 ]
@@ -381,11 +370,10 @@ goal
 
 <ul>
   <li class="m1"><span>Alle Plots beginnen mit <highm>ggplot()</highm></span></li>
-  <li class="m2"><span>2 zentrale Argumente
-  <br><br>
+  <li class="m2"><span>2 zentrale Argumente</span></li>
   <ul class="level">
     <li><span><mono>data</mono> | Der Datensatz (<mono>tibble</mono>)</span></li>
-    <li><span><mono>mapping</mono> | Die Struktur definiert mittels <mono>aes()</mono></span></li>
+    <li><span><mono>mapping</mono> | Die Struktur definiert mittels <mono>aes()</mono>
   </ul>
   </span></li>
 </ul>
@@ -410,8 +398,7 @@ ggplot(data = mpg)
 
 <ul>
   <li class="m1"><span><highm>aes()</highm> definiert die Struktur für das <mono>mapping</mono> Argument.</span></li>
-  <li class="m2"><span>Zentrale Argumente:
-  <br><br>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
   <ul class="level">
     <li><span><mono>x,y</mono> | Bestimmt die Achsen</span></li>
     <li><span><mono>color,fill</mono> | Bestimmt Farben</span></li>
@@ -419,7 +406,6 @@ ggplot(data = mpg)
     <li><span><mono>size</mono> | Bestimmt Grössen</span></li>
     <li><span><mono>shape</mono> | Bestimmt Objektypen (z.B. Kreise oder Quadrate)</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -478,8 +464,7 @@ ggplot(data = mpg,
 
 <ul>
   <li class="m1"><span><highm>geom_*()</highm> Funktionen definieren die geometrischen Objekte mit denen die Daten repräsentiert werden.</span></li>
-  <li class="m2"><span>Ein paar <mono>geoms</mono>:
-  <br><br>
+  <li class="m2"><span>Ein paar <mono>geoms</mono>:</span></li>
   <ul class="level">
     <li><span><mono>geom_point()</mono> | für Punkte</span></li>
     <li><span><mono>geom_bar()</mono> | für Balken</span></li>
@@ -487,7 +472,6 @@ ggplot(data = mpg,
     <li><span><mono>geom_count()</mono> | für Punkte skaliert nach Häufigkeit</span></li>
     <li><span><mono>geom_smooth()</mono> | für Kurven</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -610,13 +594,11 @@ goal
 
 <ul>
   <li class="m1"><span><highm>aes()</highm> definiert die Struktur für das <mono>mapping</mono> Argument.</span></li>
-  <li class="m2"><span>Zentrale Argumente:
-  <br><br>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
   <ul class="level">
     <li><span><mono>x,y</mono> | Bestimmt die Achsen</span></li>
     <li><span><high><mono>color,fill</mono> | Bestimmt Farben</high></span></li>
   </ul>
-  </span></li>
 </ul>
 
 
@@ -680,13 +662,12 @@ goal
 
 <ul>
   <li class="m1"><span>Mit <highm>geom_smooth()</highm> können Kurven an die Daten angepasst werden.</span></li>
-  <li class="m2"><span>Zentrale Argumente:
-  <br><br>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
   <ul class="level">
     <li><span><mono>method</mono> | Art der Datenanpassung</span></li>
     <li><span><mono>color</mono> | Farbe</high></span></li>
   </ul>
-  </span></li>
+
 </ul>
 
 ```{r, fig.width = 7, fig.height = 5.5, eval = F}
@@ -722,13 +703,11 @@ ggplot(data = mpg,
 
 <ul>
   <li class="m1"><span>Mit <highm>geom_smooth()</highm> können angepasste Kurven ergänzt werden.</span></li>
-  <li class="m2"><span>Zentrale Argumente:
-  <br><br>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
   <ul class="level">
     <li><span><mono>method</mono> | Art der Datenanpassung</span></li>
     <li><span><mono>color</mono> | Farbe</high></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, fig.width = 7, fig.height = 5.5, eval = F}
@@ -856,14 +835,12 @@ goal
 
 <ul>
   <li class="m1"><span>Mit <highm>labs()</highm> können alle Aspekte des Plots annotiert werden.</span></li>
-  <li class="m2"><span>Zentrale Argumente:
-  <br><br>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
   <ul class="level">
     <li><span><mono>x,y</mono> | Achsenbeschriftung</span></li>
     <li><span><mono>title, subtitle</mono> | Titel und Untertitel</high></span></li>
     <li><span><mono>caption</mono> | Bildunterschrift</high></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, echo = TRUE, eval = FALSE}
@@ -932,8 +909,7 @@ goal
 
 <ul>
   <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
-  <li class="m2"><span>Einige <mono>theme</mono>s:
-  <br><br>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
   <ul class="level">
     <li><span><mono>theme_gray()</mono></span></li>
     <li><span><mono>theme_classic()</mono></span></li>
@@ -942,7 +918,6 @@ goal
     <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
     <li><span><mono>theme_bw()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -967,8 +942,7 @@ goal + theme_gray()
 
 <ul>
   <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
-  <li class="m2"><span>Einige <mono>theme</mono>s:
-  <br><br>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
   <ul class="level">
     <li><span><mono>theme_gray()</mono></span></li>
     <li><span><mono>theme_classic()</mono></span></li>
@@ -977,7 +951,6 @@ goal + theme_gray()
     <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
     <li><span><mono>theme_bw()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -1002,8 +975,7 @@ goal + theme_classic()
 
 <ul>
   <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
-  <li class="m2"><span>Einige <mono>theme</mono>s:
-  <br><br>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
   <ul class="level">
     <li><span><mono>theme_gray()</mono></span></li>
     <li><span><mono>theme_classic()</mono></span></li>
@@ -1012,7 +984,6 @@ goal + theme_classic()
     <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
     <li><span><mono>theme_bw()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -1037,8 +1008,7 @@ goal + theme_void()
 
 <ul>
   <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
-  <li class="m2"><span>Einige <mono>theme</mono>s:
-  <br><br>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
   <ul class="level">
     <li><span><mono>theme_gray()</mono></span></li>
     <li><span><mono>theme_classic()</mono></span></li>
@@ -1047,7 +1017,6 @@ goal + theme_void()
     <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
     <li><span><mono>theme_bw()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -1072,8 +1041,7 @@ goal + theme_excel()
 
 <ul>
   <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
-  <li class="m2"><span>Einige <mono>theme</mono>s:
-  <br><br>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
   <ul class="level">
     <li><span><mono>theme_gray()</mono></span></li>
     <li><span><mono>theme_classic()</mono></span></li>
@@ -1082,7 +1050,6 @@ goal + theme_excel()
     <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
     <li><span><mono>theme_bw()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -1173,7 +1140,7 @@ goal
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2019CSS/_sessions/Plotting/Plotting_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Plotting/Plotting_practical.html">Practical</a></h1>
 
 
 

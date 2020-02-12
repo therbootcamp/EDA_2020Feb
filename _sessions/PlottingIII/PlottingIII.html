@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Plotting III</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Plotting III
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R | Februar 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+# Storytelling mit Daten
+
+.pull-left55[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Kontext verstehen&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Wer ist die Audience, was müssen sie wissen?&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Passende Darstellungsart&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Welche Darstellungsart dient der intendierten Aussage am meisten?&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Eliminiere Wirrwarr&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Gibt es unnötige Komplexität?&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Fokus setzen&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Nutze Grösse, Farben, Positionen um Aufmerksamkeit zu lenken&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;Denke wie ein Designer&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Bediene dich bewährten Prinzipien aus dem Design&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;Erzähle eine Geschichte&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Spanne einen Bogen über Anfang, Mitte, Ende&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right35[
+
+&lt;p align="center"&gt;
+&lt;img src="image/badplot.jpg" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://www.modernanalyst.com/Resources/BusinessAnalystHumor/tabid/218/ID/3516/Data_Analysis_Conclusions.aspx"&gt;modernanalyst.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Text
+
+.pull-left2[
+
+When you have just a number or two that you want to communicate:
+use the numbers directly.
+
+]
+
+
+.pull-right7[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/textfigure.png"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Tables
+
+.pull-left2[
+
+Tables interact with the verbal system and are often quite demanding. 
+
+Help the reader by moving borders to the background and by using colors. 
+
+]
+
+
+.pull-right7[
+&lt;p align="center"&gt;
+&lt;img src="image/tables.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Graphs
+
+.pull-left2[
+
+Tables interact with the visual system.
+
+A well‐designed graph will typically get the information across more quickly than a well‐designed table.
+
+Help the reader by moving borders to the background and by using colors. 
+
+]
+
+
+.pull-right7[
+&lt;p align="center"&gt;
+&lt;img src="image/tables.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left2[
+
+# Scatterplot
+
+Good for relationships
+
+Can use color to direct attention.
+
+]
+
+
+.pull-right7[
+&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/scatter.png" height="520px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Lines
+
+.pull-left2[
+
+Good single variables across, e.g., time.
+
+X-axis must be spaced evenly. 
+]
+
+
+.pull-right7[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/lines.png"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Slopes
+
+.pull-left2[
+
+Good for displaying changes across two sets of observations.  
+
+Can be overwhelming when slopes overlap too much. 
+
+Color can direct focus. 
+
+]
+
+
+.pull-right7[
+&lt;p align="center"&gt;
+&lt;img src="image/slope.png"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Bars
+
+.pull-left2[
+
+Bar charts should be leveraged because they are common.   
+
+Zero-baseline critical. 
+
+
+]
+
+
+.pull-right7[
+&lt;p align="center"&gt;
+&lt;img src="image/bars.png"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Horizontal bars
+
+.pull-left2[
+
+Bar charts should be leveraged because they are common.   
+
+Zero-baseline critical. 
+
+
+]
+
+
+.pull-right7[
+&lt;p align="center"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;img src="image/horizbars.png"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2019CSS/_sessions/PlottingII/PlottingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

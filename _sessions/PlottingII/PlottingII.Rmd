@@ -1,9 +1,9 @@
 ---
 title: "Plotting II"
 author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Dezember 2019"
+date: "Februar 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Explorative Datenanalyse mit R | Februar 2020
       </font>
     </a>
     </span>
@@ -90,7 +90,7 @@ library(gridExtra)
 .pull-right45[
 
 <p align="center">
-<img src="image/button.jpeg"><br>
+<img src="image/button.jpeg" height="420px"><br>
 <font style="font-size:10px">from <a href="http://www.lonniemillsap.com/?p=1779">lonniemillsap.com</a></font>
 </p>
 
@@ -170,13 +170,11 @@ mein_plot + geom_smooth()
 
 <ul>
   <li class="m1"><span>Facetting kreiert <high>denselben Plot für Gruppen</high> definiert durch dritte Variablen.</span></li>
-  <li class="m2"><span>Facet Funktionen:
-  <br><br>
+  <li class="m2"><span>Facet Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>facet_wrap()</mono></span></li>
     <li><span><mono>facet_grid()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, fig.width = 7, fig.height = 5.5, echo = TRUE, eval = F}
@@ -209,13 +207,11 @@ ggplot(data = mpg,
 
 <ul>
   <li class="m1"><span>Facetting kreiert <high>denselben Plot für Gruppen</high> definiert durch dritte Variablen.</span></li>
-  <li class="m2"><span>Facet Funktionen:
-  <br><br>
+  <li class="m2"><span>Facet Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>facet_wrap()</mono></span></li>
     <li><span><mono>facet_grid()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, fig.width = 7, fig.height = 5.5, echo = TRUE, eval = F}
@@ -250,13 +246,11 @@ ggplot(data = mpg,
 
 <ul>
   <li class="m1"><span>Facetting kreiert <high>denselben Plot für Gruppen</high> definiert durch dritte Variablen.</span></li>
-  <li class="m2"><span>Facet Funktionen:
-  <br><br>
+  <li class="m2"><span>Facet Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>facet_wrap()</mono></span></li>
     <li><span><mono>facet_grid()</mono></span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, fig.width = 7, fig.height = 5.5, echo = TRUE, eval = F}
@@ -292,15 +286,13 @@ ggplot(data = mpg,
 
 <ul>
   <li class="m1"><span>Passt mit den <high>87 Argumenten von <mono>theme()</mono></high> alle ästhetischen Aspekte deines Plots an.</span></li>
-  <li class="m2"><span>Nutze hierzu vier Helferfunktionen:
-  <br><br>
+  <li class="m2"><span>Nutze hierzu vier Helferfunktionen:</span></li>
   <ul class="level">
     <li><span><mono>element_rect()</mono> | für Flächen</span></li>
     <li><span><mono>element_line()</mono> | für Linien</span></li>
     <li><span><mono>element_text()</mono> | für Text</span></li>
     <li><span><mono>element_blank()</mono> | zum entfernen</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, eval = F}
@@ -328,13 +320,11 @@ mein_plot +
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Argumente für den Hintergrund:
-  <br><br>
+  <li class="m1"><span>Argumente für den Hintergrund:</span></li>
   <ul class="level">
     <li><span><mono>panel.background</mono> | für den inneren Hintergrund</span></li>
     <li><span><mono>plot.background</mono> | für den äusseren Hintergrund</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, eval = F}
@@ -370,13 +360,11 @@ mein_plot
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Argumente für das Raster:
-  <br><br>
+  <li class="m1"><span>Argumente für das Raster:</span></li>
   <ul class="level">
     <li><span><mono>panel.grid.major</mono> | grössere Rasterlinien</span></li>
     <li><span><mono>panel.grid.minor</mono> | kleinere Rasterlinien</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, eval = F}
@@ -415,13 +403,11 @@ mein_plot
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Argumente für das Raster:
-  <br><br>
+  <li class="m1"><span>Argumente für das Raster:</span></li>
   <ul class="level">
     <li><span><mono>panel.grid.major</mono> | grössere Rasterlinien</span></li>
     <li><span><mono>panel.grid.minor</mono> | kleinere Rasterlinien</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, eval = F}
@@ -465,15 +451,13 @@ mein_plot
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Argumente für die Achsen:
-  <br><br>
+  <li class="m1"><span>Argumente für die Achsen:</span></li>
   <ul class="level">
     <li><span><mono>axis.line.x</mono> | x-Achse</span></li>
     <li><span><mono>axis.line.y</mono> | y-Achse</span></li>
     <li><span><mono>axis.title.x</mono> | x-Achse Titel</span></li>
     <li><span><mono>axis.title.y</mono> | y-Achse Titel</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, eval = F}
@@ -519,15 +503,13 @@ mein_plot
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Argumente für die Achsen:
-  <br><br>
+  <li class="m1"><span>Argumente für die Achsen:</span></li>
   <ul class="level">
     <li><span><mono>axis.line.x</mono> | x-Achse</span></li>
     <li><span><mono>axis.line.y</mono> | y-Achse</span></li>
     <li><span><mono>axis.title.x</mono> | x-Achse Titel</span></li>
     <li><span><mono>axis.title.y</mono> | y-Achse Titel</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, eval = F}
@@ -773,8 +755,7 @@ mein_plot + mein_theme
 
 <ul>
   <li class="m1"><span>Mit <mono>scale_*()</mono> Funktionen lassen sich alle möglichen Längen/Grössen skalieren.</span></li>
-  <li class="m2"><span>Klassen von <mono>scale_*()</mono> Funktionen:
-  <br><br>
+  <li class="m2"><span>Klassen von <mono>scale_*()</mono> Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
     <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
@@ -782,7 +763,6 @@ mein_plot + mein_theme
     <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
     <li><span>...</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -812,8 +792,7 @@ mein_plot
 
 <ul>
   <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
-  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:
-  <br><br>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
     <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
@@ -821,7 +800,6 @@ mein_plot
     <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
     <li><span>...</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -851,8 +829,7 @@ mein_plot +
 
 <ul>
   <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
-  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:
-  <br><br>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
     <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
@@ -860,7 +837,6 @@ mein_plot +
     <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
     <li><span>...</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -890,8 +866,7 @@ mein_plot +
 
 <ul>
   <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
-  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:
-  <br><br>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
     <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
@@ -899,7 +874,6 @@ mein_plot +
     <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
     <li><span>...</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -929,8 +903,7 @@ mein_plot +
 
 <ul>
   <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
-  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:
-  <br><br>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
   <ul class="level">
     <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
     <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
@@ -938,7 +911,6 @@ mein_plot +
     <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
     <li><span>...</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -970,8 +942,7 @@ mein_plot +
 
 <ul>
   <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
-  <li class="m2"><span><mono>patchwork</mono> Syntax:
-  <br><br>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
   <ul class="level">
     <li><span><mono>+</mono> | generisch zusammefügen</span></li>
     <li><span><mono>|</mono> | nebeneinander stellen</span></li>
@@ -979,7 +950,6 @@ mein_plot +
     <li><span><mono>()</mono> | zusammenfassen</span></li>
     <li><span><mono>&</mono> | auf alle anwenden</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, echo = F}
@@ -1018,8 +988,7 @@ schoen + unschoen
 
 <ul>
   <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
-  <li class="m2"><span><mono>patchwork</mono> Syntax:
-  <br><br>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
   <ul class="level">
     <li><span><mono>+</mono> | generisch zusammefügen</span></li>
     <li><span><mono>|</mono> | nebeneinander stellen</span></li>
@@ -1027,7 +996,6 @@ schoen + unschoen
     <li><span><mono>()</mono> | zusammenfassen</span></li>
     <li><span><mono>&</mono> | auf alle anwenden</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, echo = F}
@@ -1066,8 +1034,7 @@ schoen | unschoen + schoen
 
 <ul>
   <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
-  <li class="m2"><span><mono>patchwork</mono> Syntax:
-  <br><br>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
   <ul class="level">
     <li><span><mono>+</mono> | generisch zusammefügen</span></li>
     <li><span><mono>|</mono> | nebeneinander stellen</span></li>
@@ -1075,7 +1042,6 @@ schoen | unschoen + schoen
     <li><span><mono>()</mono> | zusammenfassen</span></li>
     <li><span><mono>&</mono> | auf alle anwenden</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, echo = F}
@@ -1114,8 +1080,7 @@ unschoen <- mein_plot + mein_theme
 
 <ul>
   <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
-  <li class="m2"><span><mono>patchwork</mono> Syntax:
-  <br><br>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
   <ul class="level">
     <li><span><mono>+</mono> | generisch zusammefügen</span></li>
     <li><span><mono>|</mono> | nebeneinander stellen</span></li>
@@ -1123,7 +1088,6 @@ unschoen <- mein_plot + mein_theme
     <li><span><mono>()</mono> | zusammenfassen</span></li>
     <li><span><mono>&</mono> | auf alle anwenden</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, echo = F}
@@ -1163,8 +1127,7 @@ unschoen <- mein_plot + mein_theme
 
 <ul>
   <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
-  <li class="m2"><span><mono>patchwork</mono> Syntax:
-  <br><br>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
   <ul class="level">
     <li><span><mono>+</mono> | generisch zusammefügen</span></li>
     <li><span><mono>|</mono> | nebeneinander stellen</span></li>
@@ -1172,7 +1135,6 @@ unschoen <- mein_plot + mein_theme
     <li><span><mono>()</mono> | zusammenfassen</span></li>
     <li><span><mono>&</mono> | auf alle anwenden</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ```{r, echo = F}
@@ -1213,8 +1175,7 @@ unschoen <- mein_plot + mein_theme
 
 <ul>
   <li class="m1"><span>Kreiere <high>Bilddateien</high> mit <mono>ggsave()</mono>.</span></li>
-  <li class="m2"><span><mono>ggsave</mono> Argumente:
-  <br><br>
+  <li class="m2"><span><mono>ggsave</mono> Argumente:</span></li>
   <ul class="level">
     <li><span><mono>filename</mono> | Dateipfad</span></li>
     <li><span><mono>device</mono> | z.B. <mono>".pdf"</mono> oder <mono>".png"</mono></span></li>
@@ -1223,7 +1184,6 @@ unschoen <- mein_plot + mein_theme
     <li><span><mono>unit</mono> | Einheit für Höhe, Breite</span></li>
     <li><span><mono>dpi</mono> | Auflösung pro Einheit</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -1257,8 +1217,7 @@ ggsave(filename = "mein_plot",
 
 <ul>
   <li class="m1"><span>Kreiere <high>Bilddateien</high> mit <mono>ggsave()</mono>.</span></li>
-  <li class="m2"><span><mono>ggsave</mono> Argumente:
-  <br><br>
+  <li class="m2"><span><mono>ggsave</mono> Argumente:</span></li>
   <ul class="level">
     <li><span><mono>filename</mono> | Dateipfad</span></li>
     <li><span><mono>device</mono> | z.B. <mono>".pdf"</mono> oder <mono>".png"</mono></span></li>
@@ -1267,7 +1226,6 @@ ggsave(filename = "mein_plot",
     <li><span><mono>unit</mono> | Einheit für Höhe, Breite</span></li>
     <li><span><mono>dpi</mono> | Auflösung pro Einheit</span></li>
   </ul>
-  </span></li>
 </ul>
 
 ]
@@ -1299,4 +1257,4 @@ ggsave(filename = "mein_plot",
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2019CSS/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>

@@ -3,8 +3,8 @@ title: "Wrangling"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
-      <font style='font-style:normal'>Explorative Datenanalyse mit R @ CSS</font><br>
-      <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+      <font style='font-style:normal'>Explorative Datenanalyse mit R</font><br>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -36,8 +36,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE, 
-                      eval = TRUE, 
+                      echo = FALSE, 
+                      eval = FALSE, 
                       warning = FALSE, 
                       message = FALSE)
 
@@ -729,9 +729,9 @@ knitr::kable(weather[1:5,])
 
 ### `dplyr` vignette
 
-Siehe [https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) für die `dplyr` vignette.
+Siehe die `dplyr` [**vignette**](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html).
 
-### Cheatsheets
+### Cheatsheet
 
 <p align="center" width="100%">
 <a href="image/data-wrangling-cheatsheet.pdf" download>

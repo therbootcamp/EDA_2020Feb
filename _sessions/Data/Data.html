@@ -3,7 +3,7 @@
   <head>
     <title>Daten</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp @ CSS" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -12,8 +12,8 @@
 class: center, middle, inverse, title-slide
 
 # Daten
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a> <br> <a href='https://therbootcamp.github.io/EDA_2019CSS/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### Dezember 2019
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Explorative Datenanalyse mit R | Februar 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -261,7 +261,6 @@ basel
   &lt;/ul&gt;
   &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 
 
 ]
@@ -767,23 +766,23 @@ basel &lt;- type_convert(basel)
 .pull-right45[
 
 
+
+
 ```r
 # Verbinge mit MySQL Datenbank
-con &lt;- DBI::dbConnect(
-  RMySQL::MySQL(), 
-  dbname = "sql7314906",
-  host = "sql7.freesqldatabase.com",
-  user = "sql7314906",
-  password = "eB5nBtSKRz")
+con &lt;- dbConnect(MySQL(), 
+         user='studiech_rbootca', 
+         password='Du*5hA+7NU:8T', 
+         dbname='studiech_rbootcamp', 
+         host='studie.ch',
+         port = 3306)
 
 # Zeige Tabellen
-DBI::dbListTables(con)
+dbListTables(con)
 ```
 
 ```
-## [1] "categories"  "customers"  
-## [3] "region"      "shippers"   
-## [5] "suppliers"   "territories"
+## [1] "basel"
 ```
 
 ]
@@ -809,23 +808,22 @@ DBI::dbListTables(con)
 
 ```r
 # Extrahiere Tabelle Customers
-kunden &lt;- tbl(con, "customers")
-kunden
+basel &lt;- tbl(con, "basel")
+basel
 ```
 
 ```
-## # Source:   table&lt;customers&gt; [?? x 11]
-## # Database: mysql
-## #   5.5.58-0ubuntu0.14.04.1
-## #   [sql7314906@sql7.freesqldatabase.com:/sql7314906]
-##   CustomerID CompanyName ContactName
-##   &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;      
-## 1 ALFKI      Alfreds Fu… Maria Ande…
-## 2 ANATR      Ana Trujil… Ana Trujil…
-## 3 ANTON      Antonio Mo… Antonio Mo…
-## 4 AROUT      Around the… Thomas Har…
-## 5 BERGS      Berglunds … Christina …
-## # … with more rows, and 8 more
+## # Source:   table&lt;basel&gt; [?? x 20]
+## # Database: mysql 5.7.26-log-cll-lve
+## #   [studiech_rbootca@studie.ch:/studiech_rbootcamp]
+##      id geschlecht alter_jahre groesse
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1 f                   87    165 
+## 2     2 m                   54    175.
+## 3     3 f                   34    147.
+## 4     4 m                   31    166.
+## 5     5 m                   24    180.
+## # … with more rows, and 16 more
 ## #   variables
 ```
 
@@ -839,7 +837,7 @@ kunden
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;R kann direkt &lt;high&gt;auf Datenbanken arbeiten&lt;/high&gt;: &lt;mono&gt;MySQL&lt;/mono&gt;, &lt;mono&gt;MariaDB&lt;/mono&gt;, &lt;mono&gt;BigQuery&lt;/mono&gt;, &lt;mono&gt;Redshift&lt;/mono&gt;, etc.&lt;br&gt;&lt;font style="font-size:16px"&gt;Siehe &lt;a href="https://db.rstudio.com/databases"&gt;hier&lt;/a&gt;.&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;dplyr&lt;/mono&gt; wird in z.B. &lt;high&gt;automatisch übersetzt.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;dplyr&lt;/mono&gt; wird z.B. &lt;high&gt;automatisch übersetzt.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -851,24 +849,19 @@ kunden
 
 ```r
 # Extrahiere Tabelle Customers
-kunden &lt;- tbl(con, "customers")
+basel &lt;- tbl(con, "basel")
 
 # Extrahiere CompanyNamer Variable
-kunden %&gt;% pull(CompanyName)
+basel %&gt;% pull(konfession)
 ```
 
 ```
-##  [1] "Alfreds Futterkiste"               
-##  [2] "Ana Trujillo Emparedados y helados"
-##  [3] "Antonio Moreno Taquera"            
-##  [4] "Around the Horn"                   
-##  [5] "B's Beverages"                     
-##  [6] "Berglunds snabbkp"                 
-##  [7] "Blauer See Delikatessen"           
-##  [8] "Blido Comidas preparadas"          
-##  [9] "Blondesddsl pre et fils"           
-## [10] "Bon app'"                          
-##  [ reached getOption("max.print") -- omitted 83 entries ]
+##  [1] "katholisch"     "konfessionslos"
+##  [3] "konfessionslos" "katholisch"    
+##  [5] "katholisch"     NA              
+##  [7] "konfessionslos" "katholisch"    
+##  [9] "konfessionslos" "andere"        
+##  [ reached getOption("max.print") -- omitted 9990 entries ]
 ```
 
 ]
@@ -890,18 +883,18 @@ read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %&gt;%
 
 ```
 ## # A tibble: 17 x 3
-##    Release Date      Description                                                          
-##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                                                                
-##  1 0.16    ""        "This is the last alpha version developed primarily by Ihaka and Gen…
-##  2 0.49    1997-04-… This is the oldest source release which is currently available on CR…
-##  3 0.60    1997-12-… R becomes an official part of the GNU Project. The code is hosted an…
-##  4 0.65.1  1999-10-… First versions of update.packages and install.packages functions for…
-##  5 1.0     2000-02-… Considered by its developers stable enough for production use.[49]   
-##  6 1.4     2001-12-… S4 methods are introduced and the first version for Mac OS X is made…
-##  7 1.8     2003-10-… Introduced a flexible condition handling mechanism for signalling an…
-##  8 2.0     2004-10-… Introduced lazy loading, which enables fast loading of data with min…
-##  9 2.1     2005-04-… Support for UTF-8 encoding, and the beginnings of internationalizati…
-## 10 2.11    2010-04-… Support for Windows 64 bit systems.                                  
+##    Release Date        Description                                                        
+##    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;                                                              
+##  1 0.16    ""          "This is the last alpha version developed primarily by Ihaka and G…
+##  2 0.49    "1997-04-2… "This is the oldest source release which is currently available on…
+##  3 0.60    "1997-12-0… "R becomes an official part of the GNU Project. The code is hosted…
+##  4 0.65.1  "1999-10-0… "First versions of update.packages and install.packages functions …
+##  5 1.0     "2000-02-2… "Considered by its developers stable enough for production use.[50…
+##  6 1.4     "2001-12-1… "S4 methods are introduced and the first version for Mac OS X is m…
+##  7 1.8     "2003-10-0… "Introduced a flexible condition handling mechanism for signalling…
+##  8 2.0     "2004-10-0… "Introduced lazy loading, which enables fast loading of data with …
+##  9 2.1     "2005-04-1… "Support for UTF-8 encoding, and the beginnings of internationaliz…
+## 10 2.11    "2010-04-2… "Support for Windows 64 bit systems."                              
 ## # … with 7 more rows
 ```
 
@@ -961,7 +954,7 @@ data &lt;- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2019CSS/_sessions/Data/Data_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Data/Data_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -1009,24 +1002,7 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
+})();</script>
 
 <script>
 (function() {

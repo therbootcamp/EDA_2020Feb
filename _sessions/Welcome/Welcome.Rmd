@@ -1,9 +1,9 @@
 ---
-title: "Willkommen!"
+title: "Willkommen"
 author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Dezember 2019"
+date: "Februar 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Explorative Datenanalyse mit R | Februar 2020
       </font>
     </a>
     </span>
@@ -122,19 +122,91 @@ Finde unsere Materialien unter:
 
 ---
 
+# Data Science Rollen
+
+<br><br>
+<p align = "center">
+<img src="image/data_science_jobs.png"><br>
+<font style="font-size:10px">from <a href="https://news.efinancialcareers.com/sg-en/3001517/data-science-careers-finance">efinancialcareers.com</a></font>
+</p>
+
+---
+
+# Data Science’s missverstandener Held
+
+.pull-left45[
+
+<i>"Each of the three data science disciplines has its own excellence. Statisticians bring rigor, ML engineers bring performance, and analysts bring speed."</i>
+
+<i>"Your analyst is the sprinter; their ability to quickly help you see and summarize what-is-here is a superpower for your process."</i>
+
+<i>"The only roles every business needs are decision-makers and analysts. If you lose your analysts, who will help you figure out which problems are worth solving?"</i>
+
+<a href="https://hbr.org/2018/12/what-great-data-analysts-do-and-why-every-organization-needs-them">Harvard Business Review</a><br><a href="https://towardsdatascience.com/secret-paragraphs-from-hbrs-analytics-ddd2ead761d4">Towards Data Science</a>
+
+<br>
+<b>Cassie Kozyrkov</b><br>
+Chief Decision Scientist at Google
+
+]
+
+
+.pull-right45[
+
+<p align = "center">
+<img src="image/cassie.png"><br>
+<font style="font-size:10px">from <a href="https://medium.com/@kozyrkov"medium.com</a></font>
+</p>
+
+]
+
+---
+
+# Features in Maschinellem Lernen
+
+.pull-left4[
+
+<p align = "center">
+<img src="image/ml_robot.jpg"><br>
+<font style="font-size:10px">from <a href="https://medium.com/@dkwok94/machine-learning-for-my-grandma-ca242e97ef62">medium.com</a></font>
+</p>
+
+]
+
+
+.pull-right5[
+
+<i>"…some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used."</i>
+
+<b>Pedro Domingos</b>, Professor for Computer Science, Uni Washington
+
+<br>
+<i>"The algorithms we used are very standard for Kagglers. […] We spent most of our efforts in feature engineering."</i>
+
+<b>Xavier Conort</b>, Chief Data Scientist, Data Robot
+
+<br>
+<i>"Coming up with features is difficult, time-consuming, requires expert knowledge. "Applied machine learning" is basically feature engineering."</i>
+
+<b>Andrew Ng</b>, Founder and CEO of Landing AI
+
+]
+
+---
+
 .pull-left4[
 
 <br>
 # Agenda 
 
 <ul>
-  <li class="m1"><span><high>Workshop</high>
+  <li class="m1"><span><high>Workshop</high></span></li>
   <br><br>
   <ul class="level">
-    <li><span>Einführung in R</span></li>
-    <li><span>5 Blöcke zu explorativen Datenanalyse</span></li>
+    <li><span>1 Block zu Data IO</span></li>
+    <li><span>2 Blöcke zu Wrangling</span></li>
+    <li><span>3 Blöcke zu Plotting</span></li>
   </ul>
-  </span></li>
   <li class="m2"><span><high>Block</high>
   <br><br>
   <ul class="level">
@@ -173,7 +245,6 @@ Finde unsere Materialien unter:
   <br><br>
   <ul class="level">
     <li><span>Immer <a href="https://therbootcamp.github.io/EDA_2019CSS/">online verfügbar</a></span></li>
-    <li><span>Später gibts PDFs</span></li>
   </ul>
   </span></li>
 </ul>
@@ -260,6 +331,39 @@ Finde unsere Materialien unter:
 </table>
 <br>
 
+---
+
+.pull-left4[
+
+<br><br>
+# Pausen
+
+<ul>
+  <li class="m1"><span>Mach jederzeit Pausen.</span></li>
+  <li class="m2"><span>Bedient euch an der Pausenverpflegung.</span></li>
+  <li class="m3"><span>Lunch alleine oder begleitet uns zum Tibits.</span></li>
+</ul>
+
+]
+
+
+.pull-right6[
+
+<p align='center'><br><br><br><br>
+<img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/tibits.jpg" height="400" vspace="10"><br>
+<font style="font-size:10px">from <a href="https://www.tibits.ch/de/restaurants.html#tibits-basel">Tibits.ch</a></font>
+</p>
+
+]
+
+
+---
+
+# Photos
+
+<p align="center">
+<img src="image/camera.png" height="400px">
+</p>
 
 ---
 
@@ -269,11 +373,12 @@ Finde unsere Materialien unter:
 
 <ul>
   <li class="m1"><span>Wie heisst Du?</span></li>
-  <li class="m2"><span>Hast du Programmiererfahrung mit R oder anderen Programmiersprachen?</span></li>
-  <li class="m3"><span>Wieso möchtest Du R lernen?</span></li>
-  <li class="m4"><span>Kaffee oder Tee?</span></li>
-  <li class="m5"><span>Bier oder Wein?</span></li>
-  <li class="m6"><span>Berlin oder Paris?</span></li>
+  <li class="m2"><span>Was ist dein Beruf?</span></li>
+  <li class="m3"><span>Hast du Programmiererfahrung mit R oder anderen Programmiersprachen?</span></li>
+  <li class="m4"><span>Wieso möchtest Du R lernen?</span></li>
+  <li class="m5"><span>Kaffee oder Tee?</span></li>
+  <li class="m6"><span>Bier oder Wein?</span></li>
+  <li class="m7"><span>Berlin oder Paris?</span></li>
 </ul>
 
 ]

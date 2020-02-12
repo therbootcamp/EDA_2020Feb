@@ -589,14 +589,12 @@ knitr::kable(bevoelkerung[1:5, 1:5])
 
 ## Ressourcen
 
-### `dplyr` Vignette
+### Vignettes
 
-Hier geht es zur [dplyr Vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html).
-
-Hier geht es zur [tidyr Vignette](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/).
+Hier geht es zur `dplyr` [**vignette**](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) und hier zur `tidyr` [**vignette**](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/).
 
 
-### Cheatsheets
+### Cheatsheet
 
 <p align="center" width="100%">
 <a href="https://github.com/rstudio/cheatsheets/raw/master/translations/german/data-wrangling-german.pdf">
