@@ -1,11 +1,7 @@
 ---
 title: "Wrangling II"
 author: "Explorative Datenanalyse mit R<br>
-<<<<<<< HEAD
   <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
-=======
-  <a href='https://therbootcamp.github.io'>Basel R Bootcamp</a>
->>>>>>> ab462a1393bd59e7a4fae1d4fc722de7ba656138
   <br>
   <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -266,7 +262,7 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Entferne Zeielen mit fehlenden Werten
+  # Entferne Zeilen mit fehlenden Werten
   drop_na()
 
 ```
@@ -304,7 +300,7 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Wählen spalten aus die mit "t" beginnen
+  # Wähle spalten aus die mit "t" beginnen
   select(starts_with("t"))
 
 ```
@@ -342,7 +338,7 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Wählen spalten aus "_" beinhalten
+  # Wähle spalten aus "_" beinhalten
   select(contains("_"))
 
 ```

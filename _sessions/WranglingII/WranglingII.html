@@ -3,11 +3,7 @@
   <head>
     <title>Wrangling II</title>
     <meta charset="utf-8" />
-<<<<<<< HEAD
     <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
-=======
-    <meta name="author" content="Explorative Datenanalyse mit R  Basel R Bootcamp" />
->>>>>>> ab462a1393bd59e7a4fae1d4fc722de7ba656138
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -16,11 +12,7 @@
 class: center, middle, inverse, title-slide
 
 # Wrangling II
-<<<<<<< HEAD
 ### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-=======
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>Basel R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
->>>>>>> ab462a1393bd59e7a4fae1d4fc722de7ba656138
 ### Februar 2020
 
 ---
@@ -265,7 +257,7 @@ patienten_ergebnisse %&gt;%
 ```r
 patienten_ergebnisse %&gt;%
   
-  # Entferne Zeielen mit fehlenden Werten
+  # Entferne Zeilen mit fehlenden Werten
   drop_na()
 ```
 
@@ -312,7 +304,7 @@ patienten_ergebnisse %&gt;%
 ```r
 patienten_ergebnisse %&gt;%
   
-  # Wählen spalten aus die mit "t" beginnen
+  # Wähle spalten aus die mit "t" beginnen
   select(starts_with("t"))
 ```
 
@@ -361,7 +353,7 @@ patienten_ergebnisse %&gt;%
 ```r
 patienten_ergebnisse %&gt;%
   
-  # Wählen spalten aus "_" beinhalten
+  # Wähle spalten aus "_" beinhalten
   select(contains("_"))
 ```
 
@@ -473,7 +465,7 @@ patienten_ergebnisse %&gt;%
 ```r
 # wide zu long
 DATEN %&gt;% 
-  pivot_longer(cols = SPALTEN,
+  pivot_longer(cols = VARS,
                names_to = NAMEN,
                values_to = WERTE)
 ```
@@ -508,9 +500,9 @@ patienten_ergebnisse %&gt;%
 ```r
 # wide zu long
 DATEN %&gt;% 
-  pivot_longer(cols = SPALTEN,
-               names_to = NAMEN,
-               values_to = WERTE)
+  pivot_longer(cols = VARS,
+               names_to = NAME1,
+               values_to = NAME2)
 ```
 
 ]
@@ -550,8 +542,8 @@ patienten_ergebnisse %&gt;%
 ```r
 # wide zu long
 DATEN %&gt;% 
-  pivot_wider(names_from = NAMEN,
-              values_from = WERTE)
+  pivot_wider(names_from = VAR1,
+              values_from = VAR2)
 ```
 ]
 
@@ -588,8 +580,8 @@ patienten_ergebnisse_lang
 ```r
 # wide zu long
 DATEN %&gt;% 
-  pivot_wider(names_from = NAMEN,
-              values_from = WERTE)
+  pivot_wider(names_from = VAR1,
+              values_from = VAR2)
 ```
 ]
 
@@ -602,7 +594,7 @@ DATEN %&gt;%
 # wide zu long
 patienten_ergebnisse_lang %&gt;%
     pivot_wider(names_from = "zeit",
-               values_from = "messung")
+                values_from = "messung")
 ```
 
 ```
@@ -1170,7 +1162,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {
