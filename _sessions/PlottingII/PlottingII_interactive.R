@@ -1,9 +1,9 @@
-## Plotting Interactive
+## Plotting II Interactive
 
 # Lese Daten ein
 verbrechen <- read_csv('1_Data/verbrechen.csv')
 
-# Kreire plot 
+# Kreire plot als Funktion der Armut
 ggplot(verbrechen, aes(x = prozent_metro, 
                        y = haeufigkeit)) +
   geom_point(alpha = .2) +
@@ -12,6 +12,16 @@ ggplot(verbrechen, aes(x = prozent_metro,
   scale_x_continuous(trans = 'pseudo_log') + 
   scale_y_continuous(trans = 'pseudo_log') + 
   facet_grid(prozent_armut > 10 ~ verbrechen)
+
+# Kreire plot als Funktion der Dichte
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit)) +
+  geom_point(alpha = .2) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') + 
+  facet_grid(bevoelkerung_dichte > 5000 ~ verbrechen)
 
 # Speichere plot
 verbrechen_gg <- ggplot(verbrechen, aes(x = prozent_metro, 
