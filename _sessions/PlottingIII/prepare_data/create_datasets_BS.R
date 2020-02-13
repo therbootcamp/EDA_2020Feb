@@ -1,16 +1,7 @@
 
 
-require(tidyverse)
-a = read_csv('~/Downloads/archive.csv')
-
-
-require(ggplot2)
-data(mcdo)
-
-
-
 require(readxl)
-a = read_excel('~/Downloads/t10-1-01.xlsx', sheet = 'Okt')
+a = read_excel('_sessions/PlottingIII/prepare_data/t10-1-01.xlsx', sheet = 'Okt')
 a = a[-c(1:8),c(1,3,4,11,12)]
 a = a[-(77:81),]
 a$continent = rep(c('Europa','Amerika','Afrika','Asien','Australien, Neuseeland, Ozeanien'),c(38,9,5,21,3))
@@ -31,13 +22,14 @@ tourism = a %>% select(Land, Region, Besucher_2018, Besucher_2019) %>%
   )
   
 
-tourism %>% pivot_wider(names_from = Jahr, 
-                        values_from = c(Besucher, Dauer))
+# tourism %>% pivot_wider(names_from = Jahr, 
+#                         values_from = c(Besucher, Dauer))
 
-write_csv(tourism %>% filter(Jahr == 2018),'1_Data/Tourismus.csv')
+write_csv(tourism,'1_Data/Tourismus.csv')
+write_csv(tourism,'_sessions/PlottingIII/1_Data/Tourismus.csv')
 
 
-a = read_excel('~/Downloads/je-d-21.03.03.xlsx')
+a = read_excel('_sessions/PlottingIII/prepare_data/je-d-21.03.03.xlsx')
 
 tbl = as_tibble(t(a[c(1,3,4,5,6,21,30,43,61),-c(2:5)]))
 names(tbl) = unlist(tbl[1,])
@@ -47,7 +39,7 @@ names(tbl) = c('Code','Bevölkerung','Dichte','lo20','hi65','Erwerbsquote','BIP'
 
 codes = xml2::read_html('https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste') %>%
   rvest::html_node(xpath='//*[@id="mw-content-text"]/div/table') %>%
-  rvest::html_table()
+  rvest::html_table(fill=T)
 codes = codes[,c(1,3)]
 names(codes) = c('Land','Code')
 
@@ -142,5 +134,4 @@ imp = mice(d[,-1])
 d[,-1] = complete(imp)
 
 write_csv(d,'1_Data/Länder.csv')
-
-
+write_csv(d,'_sessions/PlottingIII/1_Data/Länder.csv')
