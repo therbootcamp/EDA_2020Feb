@@ -3,7 +3,7 @@
   <head>
     <title>Nächste Schritte</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp @ CSS" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -12,8 +12,8 @@
 class: center, middle, inverse, title-slide
 
 # Nächste Schritte
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a> <br> <a href='https://therbootcamp.github.io/EDA_2019Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### Dezember 2019
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Explorative Datenanalyse mit R | Februar 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -80,188 +80,6 @@ Nach zwei Tagen kennt ihr nun die Grundlagen von R und des Tidyverse!
 
 ---
 
-# `ggrepel`
-
-.pull-left45[
-
-
-```r
-library(ggrepel)
-
-# Lade Tourismus Daten
-tour &lt;- read_csv('1_Data/Tourismus.csv') 
-europa &lt;- read_csv('1_Data/Europa.csv') 
-
-# Verbinde Nächte mit Äquivalenzeinkommen
-tour %&gt;%
-  mutate(Nächte = Besucher * Dauer) %&gt;%
-  left_join(europa) %&gt;%
-  ggplot(aes(x = Äquivalenzeinkommen, 
-             y = Nächte,
-             label = Land)) +
-  scale_y_continuous(trans = 'log2') + 
-  geom_point() +
-  geom_label_repel(size = 2) +
-  theme_bw() 
-```
-
-]
-
-.pull-right45[
-
-![](NextSteps_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
-
-]
-
----
-
-# Textanalyse
-
-.pull-left5[
-
-
-```r
-library(tidytext)
-library(wordcloud)
-
-# Wörter zählen
-counts &lt;- 
-  read_html(".../R_(programming_language)") %&gt;%
-  html_text() %&gt;%
-  tibble() %&gt;%
-  unnest_tokens(w, ".") %&gt;%
-  filter(!str_detect(w, '[:digit:]')) %&gt;%
-  anti_join(stop_words) %&gt;%
-  count(word, sort = TRUE) %&gt;%
-  top_n(100) 
-
-# Wortwolke
-wordcloud(counts$word, 
-          counts$n)
-```
-
-]
-
-.pull-right4[
-
-![](NextSteps_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
-
-]
-
----
-
-# Statistik
-
-
-.pull-left45[
-
-
-```r
-library(tidyverse)
-
-# Lade Tourismus Daten
-tour &lt;- read_csv('1_Data/Tourismus.csv')
-länd &lt;- read_csv('1_Data/Länder.csv')                 
-
-# verbinde Daten
-data &lt;- tour %&gt;% 
-  inner_join(länd) %&gt;%
-  mutate(Nächte = Besucher * Dauer)
-
-# Regressionsanalyse
-model = lm(Nächte ~ Bevölkerung + 
-                    Dichte + BIP,
-           data = data)
-```
-
-]
-
-.pull-right45[
-
-
-
-```r
-# Bestimmtheitsmass
-summary(model)$r.squared
-```
-
-```
-## [1] 0.05719
-```
-
-
-
-```r
-# Koeffizienten
-summary(model)$coef[,-2]
-```
-
-
-```
-##               Estimate  t value Pr(&gt;|t|)
-## (Intercept)  1.213e+01  0.01294   0.9897
-## Bevölkerung  2.379e-06  1.36594   0.1775
-## Dichte      -3.381e-01 -0.82598   0.4124
-## BIP          2.988e+01  1.50779   0.1373
-```
-]
-
----
-
-.pull-left45[
-
-# Maschinelles lernen
-
-
-```r
-library(tidyverse) ; library(rpart)
-
-# Lade Tourismus Daten
-tour &lt;- read_csv('1_Data/Tourismus.csv')
-länd &lt;- read_csv('1_Data/Länder.csv')                 
-
-# verbinde Daten
-data &lt;- tour %&gt;% 
-  inner_join(länd) %&gt;%
-  mutate(Nächte = Besucher * Dauer)
-
-# Regressionsanalyse
-rpart(
-  formula = Besucher ~ Bevölkerung + 
-                       Dichte + BIP,
-  data = data) 
-```
-
-]
-
-.pull-right45[
-
-&lt;br&gt;&lt;br&gt;
-
-![](NextSteps_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
-
-]
-
----
-
-.pull-left45[
-
-# `rmarkdown`
-
-&lt;p align="left"&gt;&lt;img style="height:440px" src="image/markdown.png"&gt;&lt;/p&gt;
-]
-
-.pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;p align="center"&gt;&lt;img style="height:510px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="image/markdown2.png"&gt;&lt;/p&gt;
-]
-
----
-
-&lt;iframe width="1000" height="600" src="https://shiny.rstudio.com/gallery/movie-explorer.html" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-
----
-
 # Nächste Schritte
 
 .pull-left5[
@@ -300,7 +118,7 @@ Hier ist eine unvollständige Liste guter Bücher über R lose geordnet nach vor
   &lt;/td&gt;
 
   &lt;td&gt; 
-  &lt;a href="http://r4ds.had.co.nz/"&gt;&lt;img border="0" alt="W3Schools" src="http://r4ds.had.co.nz/cover.png" height="180"&gt;&lt;/a&gt;
+  &lt;a href="https://ggplot2-book.org/"&gt;&lt;img border="0" alt="W3Schools" src="https://images-na.ssl-images-amazon.com/images/I/31uoy-qmhEL._SX331_BO1,204,203,200_.jpg" height="180"&gt;&lt;/a&gt;
   &lt;/td&gt;
 
   &lt;td&gt;
@@ -444,16 +262,6 @@ Das Netz ist vll. der beste Ort für Informationen über R.
   &lt;col width="25%"&gt;
   &lt;col width="25%"&gt;
   &lt;col width="25%"&gt;
-  &lt;col width="25%"&gt;
-  &lt;td&gt;
-    &lt;p align="center"&gt;
-      &lt;a class="project-link" href="http://therbootcamp.github.io/#courses" align="center"&gt;
-      &lt;font style="font-size:20px;weight:700"&gt;&lt;br&gt;Explorative Datenanalyse mit R&lt;/font&gt;&lt;br&gt;
-      &lt;br&gt;
-      &lt;img src="https://therbootcamp.github.io/img/courses/1.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"&gt;&lt;/img&gt;&lt;br&gt;&lt;br&gt;
-      &lt;high&gt;Februar 14/15, 2020&lt;/high&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-    &lt;/p&gt;
-  &lt;/td&gt;
   &lt;td&gt;
     &lt;p align="center"&gt;
       &lt;a class="project-link" href="http://therbootcamp.github.io/#courses" align="center"&gt;

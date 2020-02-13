@@ -1,11 +1,7 @@
 ---
 title: "Wrangling II"
 author: "Explorative Datenanalyse mit R<br>
-<<<<<<< HEAD
   <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
-=======
-  <a href='https://therbootcamp.github.io'>Basel R Bootcamp</a>
->>>>>>> ab462a1393bd59e7a4fae1d4fc722de7ba656138
   <br>
   <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
