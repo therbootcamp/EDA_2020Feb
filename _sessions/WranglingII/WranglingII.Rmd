@@ -429,8 +429,8 @@ patienten_ergebnisse %>%
 # wide zu long
 DATEN %>% 
   pivot_longer(cols = VARS,
-               names_to = NAMEN,
-               values_to = WERTE)
+               names_to = NAME1,
+               values_to = NAME2)
 ```
 
 ]
