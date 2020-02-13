@@ -392,10 +392,45 @@ patienten_ergebnisse
 
 ]
 
+---
+
+# Aggregation
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><high>Aggregation</high>
+  <br><br>
+  <ul class="level">
+    <li><span><mono>summarise()</mono></span></li>
+    <li><span><mono>summarise_if()</mono></span></li>
+    <li><span><mono>group_by(), summarise()</mono></span></li>
+    <li><span><mono>n(), first(), last(), nth()</mono></span></li>
+    <li><span><mono>pull()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+```{r, echo=F}
+options(tibble.width=40, tibble.print_max=5, tibble.print_min=5, tibble.max_extra_cols=10)
+```
+
+```{r}
+basel
+```
+
+
+]
+
+
 
 
 ---
 
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/EDA_2019CSS/index.html>Agenda</a></h1>
+<h1><a href=https://therbootcamp.github.io/EDA_2020Feb/index.html>Agenda</a></h1>

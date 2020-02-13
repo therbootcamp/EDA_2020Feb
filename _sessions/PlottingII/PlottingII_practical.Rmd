@@ -523,7 +523,7 @@ verbrechen_gg +
 ```{r, echo = TRUE, eval = FALSE}
 ggsave(filename = "3_Figures/verbrechen.pdf", 
        device = "pdf", 
-       plot = mcdonalds_gg,
+       plot = verbrechen_gg,
        width = 4, 
        height = 4, 
        units = "in")
@@ -532,7 +532,7 @@ ggsave(filename = "3_Figures/verbrechen.pdf",
 ```{r, eval = FALSE}
 ggsave(filename = "3_Figures/verbrechen.pdf", 
        device = "pdf", 
-       plot = mcdonalds_gg,
+       plot = verbrechen_gg,
        width = 4, 
        height = 4, 
        units = "in")
