@@ -138,7 +138,7 @@ patienten_ergebnisse = patienten %>%
   <li class="m2"><span><high>Organisation</high>
   <br><br>
   <ul class="level">
-    <li><span><mono>starts_with(), contains()</mono></span></li>
+    <li><span><mono>starts_with(), contains(), :</mono></span></li>
     <li><span><mono>pivot_longer(), pivot_wider()</mono></span></li>
   </ul>
   </span></li>
@@ -262,7 +262,7 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Entferne Zeielen mit fehlenden Werten
+  # Entferne Zeilen mit fehlenden Werten
   drop_na()
 
 ```
@@ -300,7 +300,7 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Wählen spalten aus die mit "t" beginnen
+  # Wähle spalten aus die mit "t" beginnen
   select(starts_with("t"))
 
 ```
@@ -338,7 +338,7 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Wählen spalten aus "_" beinhalten
+  # Wähle spalten aus "_" beinhalten
   select(contains("_"))
 
 ```
@@ -429,8 +429,8 @@ patienten_ergebnisse %>%
 # wide zu long
 DATEN %>% 
   pivot_longer(cols = VARS,
-               names_to = NAMEN,
-               values_to = WERTE)
+               names_to = NAME1,
+               values_to = NAME2)
 ```
 
 ]
