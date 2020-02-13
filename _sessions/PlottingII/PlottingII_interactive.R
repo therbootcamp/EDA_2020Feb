@@ -35,3 +35,11 @@ verbrechen_gg +
     axis.title.y = element_text(size = 12, margin = margin(r = 10)),
     panel.spacing = unit(1.1, units = "lines")
   )
+
+# Speichere als pdf
+ggsave(filename = "3_Figures/verbrechen.pdf", 
+       device = "pdf", 
+       plot = verbrechen_gg,
+       width = 4, 
+       height = 4, 
+       units = "in")
