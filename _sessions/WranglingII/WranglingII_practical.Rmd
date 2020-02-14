@@ -67,7 +67,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte bereits die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle  Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R project. Es sollte bereits die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
 
 2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Wrangling II Practical" als Kommentare an den Anfang des Skripts.
 
@@ -108,7 +108,7 @@ bevoelkerung
 ```
 
 
-7. Im Moment sind die Daten so angeordnet, dass jedes Jahr eine einzelne Spalte hat, also im *Wide* Format wir wollen sie aber im *Long* format, z.B. fürs Plotting. Verwende `pivot_longer()` um das Format zu wechseln. Verwende `"st_wbev_2011"` und `"st_wbev_2001"` für das `cols` Argument und `"jahr"` das `names_to` Argument und speichere das Resultat als neues Objekt `bevoelkerung_long` ab.
+7. Im Moment sind die Daten so angeordnet, dass jedes Jahr eine einzelne Spalte hat, also im *Wide* Format; wir brauchen sie aber im *Long* format, z.B. fürs Plotting. Verwende `pivot_longer()` um das Format zu wechseln. Verwende `"st_wbev_2011"` und `"st_wbev_2001"` für das `cols` Argument und `"jahr"` das `names_to` Argument und speichere das Resultat als neues Objekt `bevoelkerung_long` ab.
 
 ```{r eval = FALSE, echo = TRUE}
 # Transofmation vom Wide ins Long Format
@@ -171,7 +171,7 @@ bevoelkerung_long <- bevoelkerung %>%
 
 ### C - Transformation von *Long* zu *Wide* Format 
 
-15. Lass uns nun so tun, als ob wir die Daten im Long Format (`bevoelkerung_long`) bekommen hätten und sie ins Wide Format umwandeln müssten. Verwende die `pivot_wider()` Funktion und den Argumenten `names_from` und `values_from` die Spalten `jahr` und `einwohner` zu. Speichere das Ergebnis als `bevoelkerung_wide` ab.
+1 Lass uns nun so tun, als ob wir die Daten im Long Format (`bevoelkerung_long`) bekommen hätten und sie ins Wide Format umwandeln müssten. Verwende die `pivot_wider()` Funktion und den Argumenten `names_from` und `values_from` die Spalten `jahr` und `einwohner` zu. Speichere das Ergebnis als `bevoelkerung_wide` ab.
 
 ```{r eval = FALSE, echo = TRUE}
 # Transofmation vom Long ins Wide Format
@@ -184,9 +184,9 @@ bevoelkerung_wide <- bevoelkerung_long %>%
   pivot_wider(names_from = jahr, values_from = einwohner)
 ```
 
-16. Vergleiche `bevoelkerung_wide` mit `bevoelkerung`. War die Rücktransformation erfolgreich? Was fehlt?
+2. Vergleiche `bevoelkerung_wide` mit `bevoelkerung`. War die Rücktransformation erfolgreich? Was fehlt?
 
-17. Um die zuvor entfernten Präfixe wieder bei den Variablennamen hinzuzufügen, kannst du das `names_prefix` argument in `pivot_wider()` verwenden. Benutze `names_prefix` um `"st_wbev_"` als Präfix hinzuzufügen. 
+3. Um die zuvor entfernten Präfixe wieder bei den Variablennamen hinzuzufügen, kannst du das `names_prefix` argument in `pivot_wider()` verwenden. Benutze `names_prefix` um `"st_wbev_"` als Präfix hinzuzufügen. 
 
 ```{r}
 bevoelkerung_wide <- bevoelkerung_long %>%
