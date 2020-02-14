@@ -359,7 +359,7 @@ kc_house %>%
 
 ```{r}
 kc_house %>%
-  mutate(baujahrzehnt = floor(baujahr / 10)) %>%
+  mutate(baujahrzehnt = floor(baujahr / 10) * 10) %>%
   group_by(baujahrzehnt) %>%
   summarise(N = n(),
             wohnraum = mean(qm_wohnraum))
