@@ -347,7 +347,7 @@ diamonds &lt;- read_csv(file = XX)</code></pre>
 <li><p>Du kannst das Problem lösen, indem du direkt einen <code>character</code> Vektor mit Namen dem <code>col_names</code>-Argument zuweist. Der Vektor soll folgende Namen enthalten: <code>karat</code>, <code>cut</code>, <code>farbe</code>, <code>klarheit</code>, <code>tiefe</code>, <code>tabelle</code>, <code>preis</code>.</p></li>
 </ol>
 <pre class="r"><code># lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
-diamonds &lt;- read_csv(file = &quot;XX&quot;, 
+diamonds &lt;- read_csv(file = XX, 
                      col_names = c(&#39;name_1&#39;,&#39;name_2&#39;,&#39;...&#39;))  </code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Re-inspeziere den Datensatz. Sind die Spaltennamen nun korrekt?</p></li>
@@ -364,7 +364,7 @@ diamonds$karat[XX] &lt;- YY</code></pre>
 diamonds &lt;- type_convert(diamonds)</code></pre>
 <ol start="10" style="list-style-type: decimal">
 <li><p>Printe <code>diamonds</code>, um sicher zu stellen, dass <code>karat</code> jetzt <code>numeric</code> ist, bzw. <code>dbl</code> (ein Typ von <code>numeric</code>).</p></li>
-<li><p>Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter <code>diamonds_sauber.csv</code> mit der Funktion <code>read_csv()</code>.</p></li>
+<li><p>Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter <code>diamonds_sauber.csv</code> mit der Funktion <code>write_csv()</code>.</p></li>
 </ol>
 <pre class="r"><code># Schreibe den sauberen diamonds Datensatz 
 write_csv(x = XX, path = &quot;XX/XX.csv&quot;)</code></pre>

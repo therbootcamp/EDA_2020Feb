@@ -315,7 +315,7 @@ diamonds
 
 ```{r, eval = F, echo = T}
 # lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
-diamonds <- read_csv(file = "XX", 
+diamonds <- read_csv(file = XX, 
                      col_names = c('name_1','name_2','...'))  
 ```
 
@@ -367,7 +367,7 @@ diamonds <- type_convert(diamonds)
 diamonds
 ```
 
-11. Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter `diamonds_sauber.csv` mit der Funktion `read_csv()`. 
+11. Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter `diamonds_sauber.csv` mit der Funktion `write_csv()`. 
 
 ```{r, eval = F, echo = T}
 # Schreibe den sauberen diamonds Datensatz 
