@@ -556,7 +556,7 @@ write_csv(x = sleep,
 
 ### X - Mit `logical`s rechnen
 
-1. Verwende `sum()` und `==` um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen. 
+1. Verwende `sum()` und `>` um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen. 
 
 ```{r}
 # Mehr als 10 Drinks
