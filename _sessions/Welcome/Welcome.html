@@ -227,7 +227,7 @@ Chief Decision Scientist at Google
   &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Materialien&lt;/high&gt;
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;Immer &lt;a href="https://therbootcamp.github.io/EDA_2019CSS/"&gt;online verfügbar&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Immer &lt;a href="https://therbootcamp.github.io/EDA_2020Feb/"&gt;online verfügbar&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -272,9 +272,9 @@ Chief Decision Scientist at Google
 .pull-right5[
 &lt;br&gt;
 
-  &lt;iframe src="https://therbootcamp.github.io/EDA_2019CSS/_sessions/Data/Data_practical.html" height="480px" width = "500px"&gt;&lt;/iframe&gt;
+  &lt;iframe src="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Data/Data_practical.html" height="480px" width = "500px"&gt;&lt;/iframe&gt;
 
-  Beispiel:&lt;a href="https://therbootcamp.github.io/EDA_2019CSS/_sessions/Data/Data_practical.html"&gt; Daten &lt;/a&gt;
+  Beispiel:&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Data/Data_practical.html"&gt; Daten &lt;/a&gt;
 
 ]
 
@@ -379,7 +379,7 @@ Chief Decision Scientist at Google
 ---
 class: middle, center
 
-&lt;h1&gt;&lt;a href=https://therbootcamp.github.io/EDA_2019CSS/index.html&gt;Agenda&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href=https://therbootcamp.github.io/EDA_2020Feb/index.html&gt;Agenda&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -427,7 +427,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {

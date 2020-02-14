@@ -1,5 +1,5 @@
 ---
-title: "Data"
+title: "Daten"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
@@ -556,7 +556,7 @@ write_csv(x = sleep,
 
 ### X - Mit `logical`s rechnen
 
-1. Verwende `sum()` und `==` um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen. 
+1. Verwende `sum()` und `>` um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen. 
 
 ```{r}
 # Mehr als 10 Drinks

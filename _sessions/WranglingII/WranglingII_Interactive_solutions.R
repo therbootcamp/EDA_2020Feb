@@ -4,7 +4,6 @@
 
 library(tidyverse)
 
-
 kc_house <- read_csv(file = "1_Data/kc_house.csv")
 
 # Datensatz vorbereiten (Aufgaben B1, B4-B6)
@@ -19,6 +18,12 @@ kc_house <- kc_house %>%
 
 # E6. Berechne die mittlere Anzahl Stockwerke (`stoecke`) und Badezimmer
 # (`badezimmer`) von Villen (`villa`).
+kc_house %>%
+  filter(villa == "ja") %>%
+  summarise(
+    stoecke_mean = mean(stoecke),
+    badezimmer_mean = mean(badezimmer)
+  )
 
 
 # G1. Dein Freund Theodorus interessiert sich für Häuser einer bestimmten Gegend,
@@ -26,11 +31,23 @@ kc_house <- kc_house %>%
 # Stelle ihm einen neuen Datensatz `theodorus` zusammen, welcher nur die Häuser
 # dieser Gegend enthält. Tipp: der `%in%` Operator testet ob Elemente des Vektors
 # auf der rechten Seite im Vektor auf der linken Seite enthalten sind.
-
+theodorus <- kc_house %>%
+  filter(postleitzahl %in% c(98001, 98109, 98117, 98199))
 
 # G2. Berechne für Theodorus den mittleren, den Median-, den Minimum-, den
 # Maximumpreis, sowie die Anzahl Häuser pro Gruppe, separat für die
 # Postleitzahlen und ob es eine Villa ist.
+theodorus %>%
+  group_by(postleitzahl, villa) %>%
+  summarise(preis_mean = mean(preis),
+            stoecke_min = min(stoecke),
+            stoecke_max = max(stoecke),
+            N = n())
 
 # X1. Welche Postleitzahl hat den höchsten Anteil Häuser, welche am Wasser gebaut
 # sind (`ufer`)? Printe nur diese Zeile des Datensatzes.
+kc_house %>%
+  group_by(postleitzahl) %>%
+  summarise(ufer_p = mean(ufer)) %>%
+  arrange(desc(ufer_p)) %>%
+  slice(1)
