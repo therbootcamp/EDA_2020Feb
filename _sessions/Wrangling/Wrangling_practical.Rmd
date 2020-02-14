@@ -271,26 +271,59 @@ appointments <- appointments %>%
     )
   )
 ```
-6. Finde mit der bekannten Form `data_frame$spalte1[data_frame$spalte2 == XX]` und der `mean()` Funktion heraus, ob schwerkranke Patienten häufiger den Termin nicht wahrnehmen (verwende `termin_eingehalten_01`).  
+6. Finde mit dem untenstehenden Code heraus, ob schwerkranke Patienten häufiger den Termin nicht wahrnehmen (verwende `termin_eingehalten_01`).  
 
 ```{r, echo = TRUE, eval = FALSE}
 # Anteil nicht wahrgenommener Termine
-mean(XX$XX[XX$XX == XX])
-mean(XX$XX[XX$XX != XX])
+data_frame %>%
+  filter(XX == XX) %>%
+  pull(XX) %>%
+  mean()
+
+data_frame %>%
+  filter(XX != XX) %>%
+  pull(XX) %>%
+  mean()
 ```
 
 ```{r}
 # Anteil nicht wahrgenommener Termine
-mean(appointments$termin_eingehalten_01[appointments$schwer_krank == "Ja"])
-mean(appointments$termin_eingehalten_01[appointments$schwer_krank != "Ja"])
+appointments %>%
+  filter(schwer_krank == "Ja") %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
+
+appointments %>%
+  filter(schwer_krank != "Ja") %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
 ```
 
 7. Vergleiche nun, ob es in den wahrgenommenen Terminen vielleicht Unterschiede zwischen Männern und Frauen gibt und ob es Unterschiede zwischen Patienten gibt, die mehr oder weniger als 360 Monate alt sind.  
 
+
 ```{r}
 # Anteil nicht wahrgenommener Termine
-mean(appointments$termin_eingehalten_01[appointments$geschlecht == "männlich"])
-mean(appointments$termin_eingehalten_01[appointments$geschlecht != "weiblich"])
+appointments %>%
+  filter(geschlecht == "männlich") %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
+
+appointments %>%
+  filter(geschlecht != "männlich") %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
+
+# Anteil nicht wahrgenommener Termine
+appointments %>%
+  filter(alter_monate >= 360) %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
+
+appointments %>%
+  filter(alter_monate < 360) %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
 ```
 
 ### E - Organisieren mit `select()`, `filter()`, `slice()`, und `arrange()` 
@@ -576,18 +609,32 @@ appointments_weather <- appointments %>%
 
 11. Printe `appointments_weather`. Ist alles in Ordnung?
 
-12. Finde nun mit der bekannten Form `data_frame$spalte1[data_frame$spalte2 == XX]` und der `mean()` Funktion heraus, ob Termine bei Regen seltener eingehalten wurden.  
+12. Finde nun mit Hilfe des untenstehenden Codes heraus, ob Termine bei Regen seltener eingehalten wurden.  
 
 ```{r, echo = TRUE, eval = FALSE}
 # Anteil nicht wahrgenommener Termine
-mean(XX$XX[XX$XX == XX])
-mean(XX$XX[XX$XX != XX])
+data_frame %>%
+  filter(XX == XX) %>%
+  pull(XX) %>%
+  mean()
+
+data_frame %>%
+  filter(XX != XX) %>%
+  pull(XX) %>%
+  mean()
 ```
 
-```{r, echo = TRUE, eval = FALSE}
+```{r}
 # Anteil nicht wahrgenommener Termine
-mean(appointments_weather$termin_eingehalten_01[appointments_weather$niederschlag_01 == 1])
-mean(appointments_weather$termin_eingehalten_01[appointments_weather$niederschlag_01 != 1])
+appointments_weather %>%
+  filter(niederschlag_01 == 1) %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
+
+appointments_weather %>%
+  filter(niederschlag_01 != 1) %>%
+  pull(termin_eingehalten_01) %>%
+  mean()
 ```
 
 
