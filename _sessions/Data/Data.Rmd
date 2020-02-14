@@ -62,6 +62,7 @@ options(width=110)
 options(digits = 4)
 require(tidyverse)
 basel = readr::read_csv('1_data/basel.csv')
+basel$geschlecht = toupper(basel$geschlecht)
 ```
 
 
@@ -407,12 +408,12 @@ as.character(basel$alter[1:10])
 
 ```{r, eval = F}
 # Welche Werte in Geschlecht sind m
-basel$geschlecht == "m"
+basel$geschlecht == "M"
 ```
 
 ```{r, echo = F}
 # Welche Werte in Geschlecht sind m
-basel$geschlecht[1:10] == "m"
+basel$geschlecht[1:10] == "M"
 ```
 
 ```{r, eval = F}
