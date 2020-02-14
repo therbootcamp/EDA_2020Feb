@@ -739,6 +739,7 @@ patienten_ergebnisse %&gt;%
 
 ```r
 patienten_ergebnisse %&gt;%
+  arrange(bedingung, alter) %&gt;%
 
 # Zeilen 3 und 5 
   slice(c(3, 5))
@@ -748,8 +749,8 @@ patienten_ergebnisse %&gt;%
 ## # A tibble: 2 x 6
 ##      id alter bedingung bed_label    t_1   t_2
 ##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1     3    57         2 medikament    NA    NA
-## 2     5    45         2 medikament    NA    NA
+## 1     5    45         2 medikament    NA    NA
+## 2     2    65         2 medikament   143   140
 ```
 
 
@@ -779,6 +780,7 @@ patienten_ergebnisse %&gt;%
 
 ```r
 patienten_ergebnisse %&gt;%
+  arrange(bedingung, alter) %&gt;%
 
 # Erste 4 Zeilen
   slice(1:4)
@@ -788,10 +790,10 @@ patienten_ergebnisse %&gt;%
 ## # A tibble: 4 x 6
 ##      id alter bedingung bed_label    t_1   t_2
 ##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1     1    37         1 placebo      123   135
-## 2     2    65         2 medikament   143   140
-## 3     3    57         2 medikament    NA    NA
-## 4     4    34         1 placebo      100   105
+## 1     4    34         1 placebo      100   105
+## 2     1    37         1 placebo      123   135
+## 3     5    45         2 medikament    NA    NA
+## 4     3    57         2 medikament    NA    NA
 ```
 
 ]
@@ -818,17 +820,18 @@ patienten_ergebnisse %&gt;%
 ```r
 patienten_ergebnisse %&gt;%
   
-  # Patienten mit alter &gt; 40
-  filter(alter &gt; 40)
+  # Patienten mit alter &gt; 35
+  filter(alter &gt; 35)
 ```
 
 ```
-## # A tibble: 3 x 6
+## # A tibble: 4 x 6
 ##      id alter bedingung bed_label    t_1   t_2
 ##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1     2    65         2 medikament   143   140
-## 2     3    57         2 medikament    NA    NA
-## 3     5    45         2 medikament    NA    NA
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     5    45         2 medikament    NA    NA
 ```
 
 ]
@@ -855,9 +858,9 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
-# alter grösser 40 &amp; bed_label ist medikament
+# alter grösser 35 &amp; bed_label ist medikament
 patienten_ergebnisse %&gt;%
-  filter(alter &gt; 40,
+  filter(alter &gt; 35,
          bed_label == "medikament")
 ```
 
@@ -1012,7 +1015,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {

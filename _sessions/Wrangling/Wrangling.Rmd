@@ -61,7 +61,7 @@ options(htmltools.dir.version = FALSE)
 options(width=110)
 options(digits = 4)
 require(tidyverse)
-basel = readr::read_csv('../../1_data/basel.csv')
+basel = readr::read_csv('1_data/basel.csv')
 ```
 
 
@@ -619,6 +619,7 @@ patienten_ergebnisse %>%
 
 ```{r}
 patienten_ergebnisse %>%
+  arrange(bedingung, alter) %>%
 
 # Zeilen 3 und 5 
   slice(c(3, 5))
@@ -649,6 +650,7 @@ patienten_ergebnisse %>%
 
 ```{r}
 patienten_ergebnisse %>%
+  arrange(bedingung, alter) %>%
 
 # Erste 4 Zeilen
   slice(1:4)
@@ -676,8 +678,8 @@ patienten_ergebnisse %>%
 ```{r}
 patienten_ergebnisse %>%
   
-  # Patienten mit alter > 40
-  filter(alter > 40)
+  # Patienten mit alter > 35
+  filter(alter > 35)
 ```
 
 ]
@@ -702,9 +704,9 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
-# alter grösser 40 & bed_label ist medikament
+# alter grösser 35 & bed_label ist medikament
 patienten_ergebnisse %>%
-  filter(alter > 40,
+  filter(alter > 35,
          bed_label == "medikament")
 ```
 
