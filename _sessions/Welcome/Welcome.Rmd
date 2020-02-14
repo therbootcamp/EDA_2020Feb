@@ -242,7 +242,7 @@ Chief Decision Scientist at Google
   <li class="m2"><span><high>Materialien</high>
   <br><br>
   <ul class="level">
-    <li><span>Immer <a href="https://therbootcamp.github.io/EDA_2019CSS/">online verfügbar</a></span></li>
+    <li><span>Immer <a href="https://therbootcamp.github.io/EDA_2020Feb/">online verfügbar</a></span></li>
   </ul>
   </span></li>
 </ul>
