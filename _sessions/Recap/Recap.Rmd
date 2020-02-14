@@ -1,9 +1,9 @@
 ---
 title: "Wiederholung"
 author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Dezember 2019"
+date: "Februar 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Explorative Datenanalyse mit R | Februar 2020
       </font>
     </a>
     </span>
@@ -63,103 +63,6 @@ options(digits = 4)
 require(tidyverse)
 ```
 
-
-# 10 grundlegende R Lektionen
-
-.pull-left4[
-<b>Syntax</b>
-<ul>
-  <li class="m1intro"><span><high>Der Assignment Operator <mono><-</mono></high></span></li>
-  <li class="m2gintro"><span><mono><-</mono> kreiert/verändert Objekte</span></li>
-  <li class="m3gintro"><span>Alles passiert durch Funktionen</span></li>
-  <li class="m4gintro"><span>Funktionen haben (Default) Argumente</span></li>
-  <li class="m5gintro"><span>Argumente erwarten Klassen</span></li>
-  <li class="m6gintro"><span>Findet Hilfe mit <mono>?</mono></span></li>
-</ul>
-
-<b>Produktivität</b>
-<ul>
-  <li class="m7gintro"><span>Funktionen leben in Paketen</span></li>
-  <li class="m8gintro"><span>Lernt von Fehlern und Warnungen</span></li>
-  <li class="m9gintro"><span>Benutzt R in RStudio</span></li>
-  <li class="m10gintro"><span>Benutzt Projekte in Rstudio</span></li>
-</ul>
-]
-
-.pull-right5[
-
-<p align="center">
-  <img src="image/assignment.png">
-</p>
-
-]
-
----
-
-# 10 grundlegende R Lektionen
-
-.pull-left4[
-<b>Syntax</b>
-<ul>
-  <li class="m1gintro"><span>Der Assignment Operator <mono><-</mono></span></li>
-  <li class="m2gintro"><span><mono><-</mono> kreiert/verändert Objekte</span></li>
-  <li class="m3gintro"><span>Alles passiert durch Funktionen</span></li>
-  <li class="m4gintro"><span>Funktionen haben (Default) Argumente</span></li>
-  <li class="m5gintro"><span>Argumente erwarten Klassen</span></li>
-  <li class="m6intro"><span><high>Findet Hilfe mit <mono>?</mono></high></span></li>
-</ul>
-
-<b>Produktivität</b>
-<ul>
-  <li class="m7gintro"><span>Funktionen leben in Paketen</span></li>
-  <li class="m8gintro"><span>Lernt von Fehlern und Warnungen</span></li>
-  <li class="m9gintro"><span>Benutzt R in RStudio</span></li>
-  <li class="m10gintro"><span>Benutzt Projekte in Rstudio</span></li>
-</ul>
-]
-
-
-.pull-right5[
-```{r}
-?mean
-```
-<p align="center"><img src="image/help_mean.png" width="500"></p>
-]
-
----
-
-# 10 grundlegende R Lektionen
-
-.pull-left4[
-<b>Syntax</b>
-<ul>
-  <li class="m1gintro"><span>Der Assignment Operator <mono><-</mono></span></li>
-  <li class="m2gintro"><span><mono><-</mono> kreiert/verändert Objekte</span></li>
-  <li class="m3gintro"><span>Alles passiert durch Funktionen</span></li>
-  <li class="m4gintro"><span>Funktionen haben (Default) Argumente</span></li>
-  <li class="m5gintro"><span>Argumente erwarten Klassen</span></li>
-  <li class="m6intro"><span><high>Findet Hilfe mit <mono>?</mono></high></span></li>
-</ul>
-
-<b>Produktivität</b>
-<ul>
-  <li class="m7gintro"><span>Funktionen leben in Paketen</span></li>
-  <li class="m8gintro"><span>Lernt von Fehlern und Warnungen</span></li>
-  <li class="m9gintro"><span>Benutzt R in RStudio</span></li>
-  <li class="m10gintro"><span>Benutzt Projekte in Rstudio</span></li>
-</ul>
-]
-
-
-.pull-right5[
-```{r}
-?mean
-```
-<p align="center"><img src="image/help_usage.png" width="500"></p>
-]
-
-
----
 
 # 3 Klassen von Datenobjekten
 
@@ -378,9 +281,156 @@ Der präferierte Gebrauch von `dplyr` beinhaltet einen <high>neuen Operator</hig
 ]
 
 
+---
+
+
+.pull-left4[
+
+# Transformation
+
+<ul>
+  <li class="m1"><span><high>Umbenennen</high>: Intuitive Spaltennamen vergeben.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>rename()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m2"><span><high>Umkodieren</high>: Angemessene Einheiten und Datenlabels  vergeben.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>mutate()</mono></span></li>
+    <li><span><mono>case_when()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m3"><span><high>Verbinden</high>: Datensätze zusammenführen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>left_join()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right45[
+
+<br>
+
+```{r, echo = F}
+patienten <- tibble(id = c(1, 2, 3, 4, 5),
+                    X1 = c(37, 65, 57, 34, 45),
+                    X2 = c(1, 2, 2, 1, 2))
+
+```
+
+```{r}
+patienten
+```
+
+
+```{r, echo = F}
+ergebnisse <- tibble(id = c(4, 92, 1, 2, 99),
+                     t_1 = c(100, 134, 123, 143, 102),
+                     t_2 = c(105, 150, 135, 140,68))
+```
+
+```{r}
+ergebnisse
+```
+
+]
+
+---
+
+# Organisation
+
+.pull-left4[
+
+<ul>
+  <li class="m4"><span><high>Sortieren</high>: Datensatz ordnen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>arrange()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m5"><span><high>Filtern</high>: Relevante Fälle auswählen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>slice()</mono></span></li>
+    <li><span><mono>filter()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m6"><span><high>Auswählen</high>: Relevante Variablen auswählen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>select()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right55[
+
+```{r,echo=FALSE,error=TRUE}
+patienten_ergebnisse = patienten %>% 
+  rename(alter = X1, bedingung = X2) %>%
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament")) %>%
+  
+  # Verbinde mit ergebnisse
+  left_join(ergebnisse, by = "id")
+```
+
+
+```{r}
+# Verbundener tibble
+patienten_ergebnisse
+```
+
+
+]
+
+---
+
+# Aggregation
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><high>Aggregation</high>
+  <br><br>
+  <ul class="level">
+    <li><span><mono>summarise()</mono></span></li>
+    <li><span><mono>summarise_if()</mono></span></li>
+    <li><span><mono>group_by(), summarise()</mono></span></li>
+    <li><span><mono>n(), first(), last(), nth()</mono></span></li>
+    <li><span><mono>pull()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+```{r, echo=F}
+options(tibble.width=40, tibble.print_max=5, tibble.print_min=5, tibble.max_extra_cols=10)
+```
+
+```{r}
+basel
+```
+
+
+]
+
+
+
 
 ---
 
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/EDA_2019CSS/index.html>Agenda</a></h1>
+<h1><a href=https://therbootcamp.github.io/EDA_2020Feb/index.html>Agenda</a></h1>

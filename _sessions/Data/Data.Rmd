@@ -61,7 +61,7 @@ options(htmltools.dir.version = FALSE)
 options(width=110)
 options(digits = 4)
 require(tidyverse)
-basel = readr::read_csv('../../1_data/basel.csv')
+basel = readr::read_csv('1_data/basel.csv')
 ```
 
 
@@ -835,6 +835,14 @@ data <- XML::xmlParseParse(file, ...)
 data <- jsonlite::read_json(file, ...)
 ```
 ]
+
+---
+
+class: middle, center
+
+<i>Download</i>
+
+<h1><a href="https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/TheRBootcamp_EDA_2020Feb_data.zip" download>Daten</a></h1>
 
 
 ---
