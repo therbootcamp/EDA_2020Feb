@@ -147,8 +147,8 @@ ggsave(filename = "plot_PSEUDONYM.png",
 
 5. Reiche deine Beitrag über diese Links ein: 
 
-- [**Graphik einreichen**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)
-- [**Skript einreichen**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)
+- [**Graphik einreichen**](https://www.dropbox.com/request/beSVQncMl0gozVWW3F91)
+- [**Skript einreichen**](https://www.dropbox.com/request/nv5zGG7zoli0e0bTe27a)
 
 6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
 
