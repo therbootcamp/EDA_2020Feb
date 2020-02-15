@@ -154,6 +154,11 @@ ggsave(filename = "plot_PSEUDONYM.png",
 
 Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
 
+## Rating
+
+Bitte rated die einzelnen Beiträge über diesen [**Link**](https://docs.google.com/forms/d/e/1FAIpQLSdI_QbUFZ0AkB3uL-DkSEkF-CtT3zpMa3IS-JLpaQ4CAyb2rg/viewform?usp=sf_link)
+
+
 ## Beispiel
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -180,9 +185,6 @@ ggsave(filename = 'plot_DOZENTEN.png',
 
 ```
 
-## Rating
-
-Bitte rated die einzelnen Beiträge über diesen [**Link**](https://docs.google.com/forms/d/e/1FAIpQLSdI_QbUFZ0AkB3uL-DkSEkF-CtT3zpMa3IS-JLpaQ4CAyb2rg/viewform?usp=sf_link)
 
 ## Datensätze
 
