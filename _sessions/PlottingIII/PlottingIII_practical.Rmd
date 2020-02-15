@@ -180,6 +180,10 @@ ggsave(filename = 'plot_DOZENTEN.png',
 
 ```
 
+## Rating
+
+Bitte rated die einzelnen Beiträge über diesen [**Link**](https://docs.google.com/forms/d/e/1FAIpQLSdI_QbUFZ0AkB3uL-DkSEkF-CtT3zpMa3IS-JLpaQ4CAyb2rg/viewform?usp=sf_link)
+
 ## Datensätze
 
 |Datei  | Zeilen | Spalten |
