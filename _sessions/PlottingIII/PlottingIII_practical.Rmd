@@ -54,7 +54,7 @@ options(digits = 3)
 
 ## Überblick
 
-Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt euch in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit &#127851;&#127851;&#127851; zu gewinnnen. 
+Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit &#127851;&#127851;&#127851; zu gewinnnen. 
 
 Der Wettbewerb endet in...
 
