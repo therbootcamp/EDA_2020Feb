@@ -11,7 +11,7 @@
 
 
 
-<title>Explorative Datenanalyse Wettbewerb</title>
+<title>Wettbewerb: Explorative Datenanalyse</title>
 
 <script src="PlottingIII_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -189,7 +189,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Explorative Datenanalyse Wettbewerb</h1>
+<h1 class="title toc-ignore">Wettbewerb: Explorative Datenanalyse</h1>
 <h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
 <col width='10%'>
 <col width='10%'>
@@ -213,8 +213,8 @@ $(document).ready(function () {
 <h1></h1>
 <div id="uberblick" class="section level2">
 <h2>Überblick</h2>
-<p>Demonstrate your machine-learning-jedi-knight skills in this model competition. Predict <code>gender</code> from a tweeter’s meta information and win lots of 🍫🍫🍫.</p>
-<p>The competition will end in…</p>
+<p>Beweist eure Datawrangling- und visualisierungsskills in einer Wettbewerb zu Explorativen Datenanalyse. Grabt euch in einen Datensatz um beste, entscheidungsrelevante Graphik zu erstellen um damit 🍫🍫🍫 zu gewinnne.</p>
+<p>Der Wettbewerb endet in…</p>
 <font style="font-size:32px">
 <p id="demo" align="center">
 </p>
@@ -251,104 +251,127 @@ var x = setInterval(function() {
 </script>
 <p><br><br><br></p>
 </div>
-<div id="mission-statement" class="section level2">
-<h2>Mission statement</h2>
+<div id="auftrag" class="section level2">
+<h2>Auftrag</h2>
 <p>After his overpaid machine learning task force maneuvered itself into obsolescence having developed the perfect algorithm to predict the locations of future crime, Baschi Dürr, head of justice and homeland security department of Basel-Stadt, needed a new project for his machine learning task before Elisabeth Ackerman, president of the governing council, might withdraw his newly-earned funding. And he knew he had to act quickly. To finance a new set of Wegner Swivel Chairs (<a href="https://twentytwentyone.com/product/pp-502-swivel-chair-pp-mobler">what else!</a>) for city hall’s conference rooms, Elisabeth Ackerman and Dr. Eva Herzog, head of the city’s financial department, had just announced that any expendable resources were to be invested in cryptocurrencies. Out of a lack of ideas, Baschi Dürr called up his American friends, who had previously given him such a great price on the American crime data set. He learned that they had recently begun to use machine learning for political education with impressive results (<a href="https://www.theguardian.com/news/2018/may/06/cambridge-analytica-how-turn-clicks-into-votes-christopher-wylie">truly outstanding!</a>). They explained that, using machine learning, one could uncover a person’s gender or personality to then send that person tailored political information. All too aware of the Swiss democracy’s need for information, Baschi Dürr ordered his machine learning task force to congregate at once not to waste any time: Switzerland was not going to miss out on this amazing opportunity. America first, <a href="https://www.youtube.com/watch?v=reuJ8yVCgSM">Switzerland second</a>.</p>
 <p>(Names, characters, businesses, places, events, locales, and incidents are either the products of the author’s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.)</p>
-<div id="a---preliminaries" class="section level3">
-<h3>A - Preliminaries</h3>
+<div id="a---vorbereitung" class="section level3">
+<h3>A - Vorbereitung</h3>
 <ol style="list-style-type: decimal">
-<li><p>Open your <code>BaselRBootcamp</code> R project. It should already have the folders <code>1_Data</code> and <code>2_Code</code>.</p></li>
-<li><p>Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called <code>Models_competition.R</code> in the <code>2_Code</code> folder.</p></li>
-<li><p>Using <code>library()</code> load the set of packages for this practical listed in the packages section above.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und “Explorative Datenanalyse Wettbewerb” als Kommentare an den Anfang des Skripts.</p></li>
+<li><p>Speichere das neue Skript unter dem Namen <code>wettbewerb_practical.R</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lade das <code>tidyverse</code> Paket und alle weiteren Pakete, die du verwenden möchtest.</p></li>
+<li><p>Lade die beiden Datensätze <code>Tourismus.csv</code> und <code>Europa.csv</code>.</p></li>
 </ol>
-<pre class="r"><code>## NAME
-## DATE
-## Modeling competition
-
-library(tidyverse)
-library(caret)</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>With the code below, load the <code>tweets</code> data set and change any character variables to factors.</li>
-</ol>
-<pre class="r"><code># Load tweet data
-tweets &lt;- read_csv(file = &quot;1_Data/tweets_train.csv&quot;)
-
-# change character to factor
-tweets &lt;- tweets %&gt;% mutate_if(is.character, as.factor)</code></pre>
 </div>
-<div id="b-competition-rules" class="section level3">
-<h3>B Competition rules</h3>
+<div id="b-wettbewerbsregeln" class="section level3">
+<h3>B Wettbewerbsregeln</h3>
 <ol style="list-style-type: decimal">
-<li><p>The goal of the competition is to predict with maximal <code>Accuracy</code> whether a twitter user is <code>'female'</code> or <code>'male'</code>.</p></li>
-<li><p>Entering the competition grants you a chance to win lots of 🍫🍫🍫.</p></li>
-<li><p>To enter the competition, you can submit <b>up to three</b> caret <code>train</code>-object (result of the <code>train()</code> function) containing your candidate model.</p></li>
-<li><p>To submit the model, first save your model as an <code>.RDS</code>-file named <code>pseudonym_train.RDS</code>, with <code>pseudonym</code> replaced by a pseudonym of your choice. See the code below.</p></li>
+<li><p>Das Ziel des Wettbewerbs ist es den <strong>schönsten</strong>, <strong>überzeugensten</strong>, <strong>entscheidungsrelevantesten</strong> Plot zu erstellen in den Augen der anderen Kursteilnehmer zu erstellen.</p></li>
+<li><p>Am Wettbewerb teilzunehmen ermöglicht dir die Chance viel 🍫🍫🍫 zu gewinnen.</p></li>
+<li><p>Die nimmst am Wettbewerb teil indem du deine beste Graphik im <code>.png</code> Format und das zugehörige R Script einreichst.</p></li>
+<li><p>Vor dem Einreichen, speichere deine Graphik mittels <code>ggsave()</code> (siehe code) und benenne die Datei mit einem von dir ausgewählten <em>Pseudonym</em>. Benutze das <em>Pseudonym</em> ebenfalls im Namen der <code>.R</code> Skriptdatei.</p></li>
 </ol>
-<pre class="r"><code># save train obect as .RDS
-saveRDS(my_train,&#39;1_Data/mypseudonym_train.RDS&#39;)</code></pre>
+<pre class="r"><code># speiche plot
+ggsave(filename = &quot;plot_PSEUDONYM.png&quot;,
+       plot = mein_plot,
+       device = &quot;png&quot;,       
+       units = &#39;in&#39;,
+       width = 5,         # ggf. vergrössern/verkleinern
+       height = 5         # ggf. vergrössern/verkleinern
+       )</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Submit your <code>.RDS</code> file (containing your training object) via the following link:</li>
+<li>Reiche deine Beitrag über diese Links ein:</li>
 </ol>
-<div align="center">
-<table>
-<tr>
-<th>
-Task type
-</th>
-<th>
-Criterion
-</th>
-<th>
-Performance measure
-</th>
-<th>
-Submission link
-</th>
-</tr>
-<tr>
-<td>
-Classification
-</td>
-<td>
-tweets (<code>gender</code>)
-</td>
-<td>
-Accuracy
-</td>
-<td>
-<a href="https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW"><strong>Submit candidate</strong></a>
-</td>
-</tr>
-</table>
-</div>
-<ol start="6" style="list-style-type: decimal">
-<li><p>Use any weapon in your arsenal (or <code>caret</code>’s arsenal). Feel free to try different models, use different tuning parameter settings or preprocessing methods, make use of all or some variables. Whatever may lead to the highest prediction <code>Accuracy</code>. Consult the <a href="https://therbootcamp.github.io/ML_2019Oct/"><strong>course materials</strong></a> for help.</p></li>
-<li><p>In order for us to to be able to evaluate and compare the models, you must refrain from any manipulation (or engineering) of features other than those accessible via the <code>preProcess</code> argument in the <code>train()</code> function.</p></li>
-</ol>
+<ul>
+<li><a href="https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW"><strong>Graphik einreichen</strong></a></li>
+<li><a href="https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW"><strong>Skript einreichen</strong></a></li>
+</ul>
+<p>Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.</p>
 </div>
 </div>
-<div id="datasets" class="section level2">
-<h2>Datasets</h2>
+<div id="beispiel" class="section level2">
+<h2>Beispiel</h2>
+<pre class="r"><code>require(tidyverse)
+require(ggthemes)
+
+# Erstelle plot
+mein_plot &lt;- read_csv(&#39;1_Data/Tourismus.csv&#39;) %&gt;%
+  inner_join(read_csv(&#39;1_Data/Europa.csv&#39;)) %&gt;%
+  ggplot(aes(x = Besucher, 
+             y = Dauer, 
+             color = Land)) + 
+  geom_point() + 
+  facet_wrap(~Erwerbsquote &lt; 70) +
+  theme_excel()
+
+# Speichere plot als png
+ggsave(filename = &#39;plot_DOZENTEN.png&#39;,
+       plot = mein_plot,
+       device = &quot;png&quot;,
+       units = &quot;in&quot;,
+       width = 7,
+       height = 5)</code></pre>
+</div>
+<div id="datensatze" class="section level2">
+<h2>Datensätze</h2>
 <table>
 <thead>
 <tr class="header">
-<th align="left">File</th>
-<th align="left">Rows</th>
-<th align="left">Columns</th>
+<th align="left">Datei</th>
+<th align="left">Zeilen</th>
+<th align="left">Spalten</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/appliedML_2019Jan/master/1_Data/tweets_train.csv">tweets</a></td>
-<td align="left">2500</td>
-<td align="left">23</td>
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/Tourismus.csv">Tourismus.csv</a></td>
+<td align="left">141</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/Europa.csv">Europa.csv</a></td>
+<td align="left">45</td>
+<td align="left">9</td>
 </tr>
 </tbody>
 </table>
-<p>Note: The <code>tweets</code> data are a (heavily) pre-processed subsets of this original data set from <a href="https://www.kaggle.com/crowdflower/twitter-user-gender-classification">Kaggle</a>.</p>
-<div id="variable-descriptions" class="section level5">
-<h5>Variable descriptions</h5>
+<div id="variablenbeschreibungen-tourismus.csv" class="section level5">
+<h5>Variablenbeschreibungen <code>Tourismus.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Land</code></td>
+<td align="left">Land in dem die Besucher wohnhaft sind.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Region</code></td>
+<td align="left">Region des Landes.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Jahr</code></td>
+<td align="left">Jahr der Besucherzählung: <code>2018</code> oder <code>2019</code>.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Besucher</code></td>
+<td align="left">Anzahl der Besucher.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Dauer</code></td>
+<td align="left">Durchschnittliche Dauer des Besuchs.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="variablenbeschreibungen-europa.csv" class="section level5">
+<h5>Variablenbeschreibungen <code>Europa.csv</code></h5>
 <table>
 <colgroup>
 <col width="39%" />
@@ -357,112 +380,49 @@ Accuracy
 <thead>
 <tr class="header">
 <th align="left">Name</th>
-<th align="left">Meaning</th>
+<th align="left">Bedeutung</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">gender</td>
-<td align="left">The criterion. Whether the person tweeting was <code>&quot;male&quot;</code> or <code>&quot;female&quot;</code>.</td>
+<td align="left"><code>Land</code></td>
+<td align="left">Land in dem die Besucher wohnhaft sind</td>
 </tr>
 <tr class="even">
-<td align="left">year_created</td>
-<td align="left">The year the person’s twitter account was created.</td>
+<td align="left"><code>Bevölkerung</code></td>
+<td align="left">Bevölkerunggrösse des Landes.</td>
 </tr>
 <tr class="odd">
-<td align="left">hour_created</td>
-<td align="left">The hour of day (1:24h) the person’s twitter account was created.</td>
+<td align="left"><code>Dichte</code></td>
+<td align="left">Einwohner pro km2</td>
 </tr>
 <tr class="even">
-<td align="left">tweet_count</td>
-<td align="left">The number of tweets that the person has posted.</td>
+<td align="left"><code>lo20</code></td>
+<td align="left">% Einwohner unter 20 Lebensjahren.</td>
 </tr>
 <tr class="odd">
-<td align="left">retweet_count</td>
-<td align="left">The number of retweets that the person has posted.</td>
+<td align="left"><code>hi65</code></td>
+<td align="left">% Einwohner über 65 Lebensjahren.</td>
 </tr>
 <tr class="even">
-<td align="left">user_timezone</td>
-<td align="left">The person’s time zone relative to GMT.</td>
+<td align="left"><code>Erwerbsquote</code></td>
+<td align="left">% Einwohner mit Beschäftigung.</td>
 </tr>
 <tr class="odd">
-<td align="left">name_nchar</td>
-<td align="left">The number of characters in the person’s twitter name.</td>
+<td align="left"><code>BIP</code></td>
+<td align="left">Bruttoinlandsprodukt des Landes.</td>
 </tr>
 <tr class="even">
-<td align="left">name_male</td>
-<td align="left"><code>1</code> if the person’s twitter name contains one of the 1’000 most frequent male baby names in America, <code>0</code> if not.</td>
+<td align="left"><code>Motorisierung</code></td>
+<td align="left">Anzahl Autos pro 1,000 Einwohner.</td>
 </tr>
 <tr class="odd">
-<td align="left">name_female</td>
-<td align="left"><code>1</code> if the person’s twitter name contains one of the 1’000 most frequent female baby names in America, <code>0</code> if not.</td>
-</tr>
-<tr class="even">
-<td align="left">descr_nchar</td>
-<td align="left">The number of characters in the person’s twitter account description.</td>
-</tr>
-<tr class="odd">
-<td align="left">descr_male</td>
-<td align="left"><code>1</code> if the person’s twitter account description contains one of the 1’000 most frequent male baby names in America, <code>0</code> if not.</td>
-</tr>
-<tr class="even">
-<td align="left">descr_female</td>
-<td align="left"><code>1</code> if the person’s twitter account description contains one of the 1’000 most frequent female baby names in America, <code>0</code> if not.</td>
-</tr>
-<tr class="odd">
-<td align="left">descr_sent</td>
-<td align="left">Average sentiment score (&gt;0 = positive sentiment) of the person’s twitter account description.</td>
-</tr>
-<tr class="even">
-<td align="left">tweet_nchar</td>
-<td align="left">The number of characters in one randomly chosen tweet by the person.</td>
-</tr>
-<tr class="odd">
-<td align="left">tweet_male</td>
-<td align="left"><code>1</code> if the randomly chosen tweet contains one of the 1’000 most frequent male baby names in America, <code>0</code> if not.</td>
-</tr>
-<tr class="even">
-<td align="left">tweet_female</td>
-<td align="left"><code>1</code> if the randomly chosen tweet contains one of the 1’000 most frequent female baby names in America, <code>0</code> if not.</td>
-</tr>
-<tr class="odd">
-<td align="left">tweet_sent</td>
-<td align="left">Average sentiment score (&gt;0 = positive sentiment) of the randomly chosen tweet.</td>
-</tr>
-<tr class="even">
-<td align="left">linkcol_red</td>
-<td align="left">Red value (1:255) in the link color according to the person’s twitter scheme.</td>
-</tr>
-<tr class="odd">
-<td align="left">linkcol_green</td>
-<td align="left">green value (1:255) in the link color according to the person’s twitter scheme.</td>
-</tr>
-<tr class="even">
-<td align="left">linkcol_blue</td>
-<td align="left">blue value (1:255) in the link color according to the person’s twitter scheme.</td>
-</tr>
-<tr class="odd">
-<td align="left">sidecol_red</td>
-<td align="left">Red value (1:255) in the side bar color according to the person’s twitter scheme.</td>
-</tr>
-<tr class="even">
-<td align="left">sidecol_green</td>
-<td align="left">Green value (1:255) in the side bar color according to the person’s twitter scheme.</td>
-</tr>
-<tr class="odd">
-<td align="left">sidecol_blue</td>
-<td align="left">Blue value (1:255) in the side bar color according to the person’s twitter scheme.</td>
+<td align="left"><code>Äquivalenzeinkommen</code></td>
+<td align="left">Kaufkraftbereinigtes durchschnittliches Jahreseinkommen in Euro.</td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div id="cheatsheet" class="section level2">
-<h2>Cheatsheet</h2>
-<figure>
-<center>
-<a href="https://github.com/rstudio/cheatsheets/raw/master/caret.pdf"> <img src="https://www.rstudio.com/wp-content/uploads/2015/01/caret-cheatsheet.png" alt="Trulli" style="width:70%"></a><br> <font style="font-size:10px"> from <a href= "https://github.com/rstudio/cheatsheets/raw/master/caret.pdf</figcaption">github.com/rstudio</a></font>
-</figure>
 </div>
 </div>
 

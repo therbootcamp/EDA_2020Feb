@@ -1,5 +1,5 @@
 ---
-title: "Explorative Datenanalyse Wettbewerb"
+title: "Wettbewerb: Explorative Datenanalyse"
 subtitle: ""
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
@@ -54,9 +54,9 @@ options(digits = 3)
 
 ## Überblick
 
-Demonstrate your machine-learning-jedi-knight skills in this model competition. Predict `gender` from a tweeter's meta information and win lots of &#127851;&#127851;&#127851;.
+Beweist eure Datawrangling- und visualisierungsskills in einer Wettbewerb zu Explorativen Datenanalyse. Grabt euch in einen Datensatz um beste, entscheidungsrelevante Graphik zu erstellen um damit &#127851;&#127851;&#127851; zu gewinnne. 
 
-The competition will end in...
+Der Wettbewerb endet in...
 
 <font style="font-size:32px"><p id="demo" align="center"></p></font>
 
@@ -93,22 +93,26 @@ var x = setInterval(function() {
 
 <br><br><br>
 
-## Mission statement
+## Auftrag
+
+
 
 After his overpaid machine learning task force maneuvered itself into obsolescence having developed the perfect algorithm to predict the locations of future crime, Baschi Dürr, head of justice and homeland security department of Basel-Stadt, needed a new project for his machine learning task before Elisabeth Ackerman, president of the governing council, might withdraw his newly-earned funding. And he knew he had to act quickly. To finance a new set of Wegner Swivel Chairs ([what else!](https://twentytwentyone.com/product/pp-502-swivel-chair-pp-mobler)) for city hall's conference rooms, Elisabeth Ackerman and Dr. Eva Herzog, head of the city's financial department, had just announced that any expendable resources were to be invested in cryptocurrencies. Out of a lack of ideas, Baschi Dürr called up his American friends, who had previously given him such a great price on the American crime data set. He learned that they had recently begun to use machine learning for political education with impressive results ([truly outstanding!](https://www.theguardian.com/news/2018/may/06/cambridge-analytica-how-turn-clicks-into-votes-christopher-wylie)). They explained that, using machine learning, one could uncover a person's gender or personality to then send that person tailored political information. All too aware of the Swiss democracy's need for information, Baschi Dürr ordered his machine learning task force to congregate at once not to waste any time: Switzerland was not going to miss out on this amazing opportunity. America first, [Switzerland second](https://www.youtube.com/watch?v=reuJ8yVCgSM).
 
 (Names, characters, businesses, places, events, locales, and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.)
 
 
-### A - Preliminaries
+### A - Vorbereitung
 
-1. Open your `BaselRBootcamp` R project. It should already have the folders `1_Data` and `2_Code`. 
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
 
-2. Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called `Models_competition.R` in the `2_Code` folder.  
+2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Explorative Datenanalyse Wettbewerb" als Kommentare an den Anfang des Skripts.
 
-3. Using `library()` load the set of packages for this practical listed in the packages section above.
+3. Speichere das neue Skript unter dem Namen `wettbewerb_practical.R` im `2_Code` Ordner.
 
-```{r, eval = FALSE, echo = TRUE}
+4. Lade das `tidyverse` Paket und alle weiteren Pakete, die du verwenden möchtest.
+
+```{r, eval = FALSE, echo = FALSE}
 ## NAME
 ## DATE
 ## Modeling competition
@@ -121,109 +125,92 @@ library(caret)
 library(tidyverse)
 ```
 
-4. With the code below, load the `tweets` data set and change any character variables to factors.
+5. Lade die beiden Datensätze `Tourismus.csv` und `Europa.csv`.
 
-```{r, echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE}
+### B Wettbewerbsregeln
 
-# Load tweet data
-tweets <- read_csv(file = "1_Data/tweets_train.csv")
+1. Das Ziel des Wettbewerbs ist es den **schönsten**, **überzeugensten**, **entscheidungsrelevantesten** Plot zu erstellen in den Augen der anderen Kursteilnehmer zu erstellen. 
 
-# change character to factor
-tweets <- tweets %>% mutate_if(is.character, as.factor)
+2. Am Wettbewerb teilzunehmen ermöglicht dir die Chance viel &#127851;&#127851;&#127851; zu gewinnen. 
 
-```
+3. Die nimmst am Wettbewerb teil indem du deine beste Graphik im `.png` Format und das zugehörige R Script einreichst.
 
-### B Competition rules
-
-1. The goal of the competition is to predict with maximal `Accuracy` whether a twitter user is `'female'` or `'male'`.
-
-2. Entering the competition grants you a chance to win lots of &#127851;&#127851;&#127851;.
-
-3. To enter the competition, you can submit <b>up to three</b> caret `train`-object (result of the `train()` function) containing your candidate model. 
-
-4. To submit the model, first save your model as an `.RDS`-file named `pseudonym_train.RDS`, with `pseudonym` replaced by a pseudonym of your choice. See the code below.
+4. Vor dem Einreichen, speichere deine Graphik mittels `ggsave()` (siehe code) und benenne die Datei mit einem von dir ausgewählten *Pseudonym*. Benutze das *Pseudonym* ebenfalls im Namen der `.R` Skriptdatei. 
 
 ```{r}
-# save train obect as .RDS
-saveRDS(my_train,'1_Data/mypseudonym_train.RDS')
+# speiche plot
+ggsave(filename = "plot_PSEUDONYM.png",
+       plot = mein_plot,
+       device = "png",       
+       units = 'in',
+       width = 5,         # ggf. vergrössern/verkleinern
+       height = 5         # ggf. vergrössern/verkleinern
+       )
 ```
 
-5. Submit your `.RDS` file (containing your training object) via the following link:
+5. Reiche deine Beitrag über diese Links ein: 
 
-<div align = "center">
-<table>
-<tr>
-<th>Task type</th>
-<th>Criterion</th>
-<th>Performance measure</th>
-<th>Submission link</th>
-</tr>
-<tr>
-  <td>Classification</td> 
-  <td>tweets (`gender`)</td>
-  <td>Accuracy</td>
-  <td>[**Submit candidate**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)</td>
-</tr>
-</table>
-</div>
+- [**Graphik einreichen**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)
+- [**Skript einreichen**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)
 
-6. Use any weapon in your arsenal (or `caret`'s arsenal). Feel free to try different models, use different tuning parameter settings or preprocessing methods, make use of all or some variables. Whatever may lead to the highest prediction `Accuracy`. Consult the [**course materials**](https://therbootcamp.github.io/ML_2019Oct/) for help. 
 
-7. In order for us to to be able to evaluate and compare the models, you must refrain from any manipulation (or engineering) of features other than those accessible via the `preProcess` argument in the `train()` function.
+Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
 
-## Datasets
+## Beispiel
 
-```{r, eval = TRUE, message = FALSE, echo = FALSE}
-library(tidyverse)
-library(ggthemes)
+```{r, eval = FALSE, echo = TRUE}
+require(tidyverse)
+require(ggthemes)
+
+# Erstelle plot
+mein_plot <- read_csv('1_Data/Tourismus.csv') %>%
+  inner_join(read_csv('1_Data/Europa.csv')) %>%
+  ggplot(aes(x = Besucher, 
+             y = Dauer, 
+             color = Land)) + 
+  geom_point() + 
+  facet_wrap(~Erwerbsquote < 70) +
+  theme_excel()
+
+# Speichere plot als png
+ggsave(filename = 'plot_DOZENTEN.png',
+       plot = mein_plot,
+       device = "png",
+       units = "in",
+       width = 7,
+       height = 5)
+
 ```
 
-|File  |Rows | Columns |
+## Datensätze
+
+|Datei  | Zeilen | Spalten |
 |:----|:-----|:------|
-|[tweets](https://raw.githubusercontent.com/therbootcamp/appliedML_2019Jan/master/1_Data/tweets_train.csv)| 2500 | 23|
+|[Tourismus.csv](https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/Tourismus.csv)| 141 | 5 |
+|[Europa.csv](https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/Europa.csv)| 45 | 9 |
 
-```{r, message = FALSE, eval = TRUE, echo = FALSE}
-# Load datasets locally
-library(tidyverse)
-```
+##### Variablenbeschreibungen `Tourismus.csv`
 
-Note: The `tweets` data are a (heavily) pre-processed subsets of this original data set from [Kaggle](https://www.kaggle.com/crowdflower/twitter-user-gender-classification). 
-
-##### Variable descriptions
-
-|Name  |Meaning |
+|Name  |Bedeutung |
 |:--------------------------|:-----------------------------------------|
-|gender| The criterion. Whether the person tweeting was `"male"` or `"female"`.|
-|year_created| The year the person's twitter account was created.|
-|hour_created| The hour of day (1:24h) the person's twitter account was created.|
-|tweet_count| The number of tweets that the person has posted.|
-|retweet_count| The number of retweets that the person has posted. |
-|user_timezone| The person's time zone relative to GMT. |
-|name_nchar| The number of characters in the person's twitter name. |
-|name_male| `1` if the person's twitter name contains one of the 1'000 most frequent male baby names in America, `0` if not.|
-|name_female|`1` if the person's twitter name contains one of the 1'000 most frequent female baby names in America, `0` if not.|
-|descr_nchar| The number of characters in the person's twitter account description.|
-|descr_male| `1` if the person's twitter account description contains one of the 1'000 most frequent male baby names in America, `0` if not.|
-|descr_female| `1` if the person's twitter account description contains one of the 1'000 most frequent female baby names in America, `0` if not.|
-|descr_sent| Average sentiment score (>0 = positive sentiment) of the person's twitter account description.|
-|tweet_nchar| The number of characters in one randomly chosen tweet by the person.|
-|tweet_male| `1` if the randomly chosen tweet contains one of the 1'000 most frequent male baby names in America, `0` if not.|
-|tweet_female| `1` if the randomly chosen tweet contains one of the 1'000 most frequent female baby names in America, `0` if not.|
-|tweet_sent| Average sentiment score (>0 = positive sentiment) of the randomly chosen tweet.|
-|linkcol_red| Red value (1:255) in the link color according to the person's twitter scheme. |
-|linkcol_green| green value (1:255) in the link color according to the person's twitter scheme.|
-|linkcol_blue| blue value (1:255) in the link color according to the person's twitter scheme.|
-|sidecol_red| Red value (1:255) in the side bar color according to the person's twitter scheme.|
-|sidecol_green| Green value (1:255) in the side bar color according to the person's twitter scheme.|
-|sidecol_blue| Blue value (1:255) in the side bar color according to the person's twitter scheme.|
+| `Land` | Land in dem die Besucher wohnhaft sind. |
+| `Region` | Region des Landes. |
+| `Jahr` | Jahr der Besucherzählung: `2018` oder `2019`. |
+| `Besucher` | Anzahl der Besucher.|
+| `Dauer` | Durchschnittliche Dauer des Besuchs. |
 
+##### Variablenbeschreibungen `Europa.csv`
 
-## Cheatsheet
+|Name  |Bedeutung |
+|:--------------------------|:-----------------------------------------|
+| `Land` | Land in dem die Besucher wohnhaft sind |
+| `Bevölkerung` | Bevölkerunggrösse des Landes. |
+| `Dichte` | Einwohner pro km2 |
+| `lo20` | % Einwohner unter 20 Lebensjahren. |
+| `hi65` | % Einwohner über 65 Lebensjahren. |
+| `Erwerbsquote` | % Einwohner mit Beschäftigung. |
+| `BIP` | Bruttoinlandsprodukt des Landes. |
+| `Motorisierung` | Anzahl Autos pro 1,000 Einwohner. |
+| `Äquivalenzeinkommen` | Kaufkraftbereinigtes durchschnittliches Jahreseinkommen in Euro. |
 
-<figure>
-<center>
-<a href="https://github.com/rstudio/cheatsheets/raw/master/caret.pdf">
-  <img src="https://www.rstudio.com/wp-content/uploads/2015/01/caret-cheatsheet.png" alt="Trulli" style="width:70%"></a><br>
- <font style="font-size:10px"> from <a href= "https://github.com/rstudio/cheatsheets/raw/master/caret.pdf</figcaption">github.com/rstudio</a></font>
-</figure>
 
