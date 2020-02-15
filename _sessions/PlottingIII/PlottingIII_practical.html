@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -211,9 +199,9 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>Beweist eure Datawrangling- und visualisierungsskills in einer Wettbewerb zu Explorativen Datenanalyse. Grabt euch in einen Datensatz um beste, entscheidungsrelevante Graphik zu erstellen um damit 🍫🍫🍫 zu gewinnne.</p>
+<p>Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt euch in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit 🍫🍫🍫 zu gewinnnen.</p>
 <p>Der Wettbewerb endet in…</p>
 <font style="font-size:32px">
 <p id="demo" align="center">
@@ -253,8 +241,8 @@ var x = setInterval(function() {
 </div>
 <div id="auftrag" class="section level2">
 <h2>Auftrag</h2>
-<p>Christoph Brutschin, Vorsteher des Departments für Wirtschaft, Soziales und Umwelt, und damit im Basler Regierungsrat verantworlich für das Thema Tourismus, ging es schon mal besser. In ein paar Stunden müsste er Elisabeth Ackerman, Vorsteherin des Präsidialamts, den jährlichen Tourismusbericht präsentieren und die Zahlen waren nicht was er sich erhofft hatte. Trotz aller Bemühungen waren von 2018 bis 2019 die Besucherzahlen um satte 4.1% gesunken. Christoph Brutschin hatte keine gute Erklärung für die Veränderung, aber er wusste, dass es darum jetzt auch gar nicht mehr ging. Alles was zählte war, dass er eine Werbestrategie parat hätte wie sich in 2020 die Besucherzahlen wieder steigern liessen und er wusste genau an wen er sich dafür wendet musste. Kürzlich hatte der Basler Regierungsrat eine ihm unterstellte Data Science Unit geschaffen, die es verstanden in autemberaubenden Tempo die komplexesten Daten in unmittelbar entscheidungsrelevante Erkenntnisse und inhaltlich überzeugende und ästhetisch ansprechende Abbildungen zu übersetzen. Als Mitglied der Basler Data Science Unit ist es nun deine Aufgabe einem sichtlich nervösen Christoph Brutschin zu liefern was er braucht: Die eine Graphik, die sofot klarmacht an welche Besuchergruppen die Werbebemühungen in 2020 zu richten sind.</p>
-<p>(Namen, Organisationen, und Orten sind Produkt der Imagination des Autors. Jede Ähnlichkeit zu existierenden Personen ist absolut zufällig.)</p>
+<p>Christoph Brutschin, Vorsteher des Departments für Wirtschaft, Soziales und Umwelt, und damit im Basler Regierungsrat verantworlich für das Thema Tourismus, ging es schon mal besser. In ein paar Stunden müsste er Elisabeth Ackerman, Vorsteherin des Präsidialamts, den jährlichen Tourismusbericht präsentieren und die Zahlen waren nicht was er sich erhofft hatte. Trotz aller Bemühungen waren von 2018 bis 2019 die Besucherzahlen um satte 4.1% gesunken. Christoph Brutschin hatte keine gute Erklärung für die Veränderung, aber er wusste, dass es darum jetzt auch gar nicht mehr ging. Alles was zählte war, dass er eine Werbestrategie parat hätte wie sich in 2020 die Besucherzahlen wieder steigern liessen und er wusste genau an wen er sich dafür wendet musste. Kürzlich hatte der Basler Regierungsrat eine ihm unterstellte Data Science Unit geschaffen, die es verstand in autemberaubenden Tempo die komplexesten Daten in unmittelbar entscheidungsrelevante Erkenntnisse und inhaltlich überzeugende und ästhetisch ansprechende Abbildungen zu übersetzen. Als Mitglied der Basler Data Science Unit ist es nun deine Aufgabe einem sichtlich nervösen Christoph Brutschin zu liefern was er braucht: Die eine Graphik, die sofort klarmacht an welche Besuchergruppen die Werbebemühungen in 2020 zu richten sind.</p>
+<p>(Namen, Organisationen, und Orte sind Produkt der Imagination des Autors. Jede Ähnlichkeit zu existierenden Personen ist absolut zufällig.)</p>
 <div id="a---vorbereitung" class="section level3">
 <h3>A - Vorbereitung</h3>
 <ol style="list-style-type: decimal">
@@ -273,7 +261,7 @@ var x = setInterval(function() {
 <li><p>Die nimmst am Wettbewerb teil indem du deine beste Graphik im <code>.png</code> Format und das zugehörige R Script einreichst.</p></li>
 <li><p>Vor dem Einreichen, speichere deine Graphik mittels <code>ggsave()</code> (siehe code) und benenne die Datei mit einem von dir ausgewählten <em>Pseudonym</em>. Benutze das <em>Pseudonym</em> ebenfalls im Namen der <code>.R</code> Skriptdatei.</p></li>
 </ol>
-<pre class="r"><code># speiche plot
+<pre class="r"><code># speichere plot
 ggsave(filename = &quot;plot_PSEUDONYM.png&quot;,
        plot = mein_plot,
        device = &quot;png&quot;,       
@@ -291,7 +279,7 @@ ggsave(filename = &quot;plot_PSEUDONYM.png&quot;,
 <ol start="6" style="list-style-type: decimal">
 <li>Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.</li>
 </ol>
-<p>Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.</p>
+<p>Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.</p>
 </div>
 </div>
 <div id="beispiel" class="section level2">
@@ -317,7 +305,7 @@ ggsave(filename = &#39;plot_DOZENTEN.png&#39;,
        width = 7,
        height = 5)</code></pre>
 </div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <table>
 <thead>
@@ -446,6 +434,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
