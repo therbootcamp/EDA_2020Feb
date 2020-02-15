@@ -54,7 +54,7 @@ layout: true
 
 ```{r, eval = TRUE, echo = FALSE, warning=F,message=F}
 # Code to knit slides
-baselers <- readr::read_csv("../../1_Data/basel.csv")
+baselers <- readr::read_csv("1_Data/basel.csv")
 ```
 
 
