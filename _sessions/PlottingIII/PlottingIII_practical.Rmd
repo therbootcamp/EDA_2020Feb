@@ -95,12 +95,9 @@ var x = setInterval(function() {
 
 ## Auftrag
 
+Christoph Brutschin, Vorsteher des Departments für Wirtschaft, Soziales und Umwelt, und damit im Basler Regierungsrat verantworlich für das Thema Tourismus, ging es schon mal besser. In ein paar Stunden müsste er Elisabeth Ackerman, Vorsteherin des Präsidialamts, den jährlichen Tourismusbericht präsentieren und die Zahlen waren nicht was er sich erhofft hatte. Trotz aller Bemühungen waren von 2018 bis 2019 die Besucherzahlen um satte 4.1% gesunken. Christoph Brutschin hatte keine gute Erklärung für die Veränderung, aber er wusste, dass es darum jetzt auch gar nicht mehr ging. Alles was zählte war, dass er eine Werbestrategie parat hätte wie sich in 2020 die Besucherzahlen wieder steigern liessen und er wusste genau an wen er sich dafür wendet musste. Kürzlich hatte der Basler Regierungsrat eine ihm unterstellte Data Science Unit geschaffen, die es verstanden in autemberaubenden Tempo die komplexesten Daten in unmittelbar entscheidungsrelevante Erkenntnisse und inhaltlich überzeugende und ästhetisch ansprechende Abbildungen zu übersetzen. Als Mitglied der Basler Data Science Unit ist es nun deine Aufgabe einem sichtlich nervösen Christoph Brutschin zu liefern was er braucht: Die eine Graphik, die sofot klarmacht an welche Besuchergruppen die Werbebemühungen in 2020 zu richten sind. 
 
-
-After his overpaid machine learning task force maneuvered itself into obsolescence having developed the perfect algorithm to predict the locations of future crime, Baschi Dürr, head of justice and homeland security department of Basel-Stadt, needed a new project for his machine learning task before Elisabeth Ackerman, president of the governing council, might withdraw his newly-earned funding. And he knew he had to act quickly. To finance a new set of Wegner Swivel Chairs ([what else!](https://twentytwentyone.com/product/pp-502-swivel-chair-pp-mobler)) for city hall's conference rooms, Elisabeth Ackerman and Dr. Eva Herzog, head of the city's financial department, had just announced that any expendable resources were to be invested in cryptocurrencies. Out of a lack of ideas, Baschi Dürr called up his American friends, who had previously given him such a great price on the American crime data set. He learned that they had recently begun to use machine learning for political education with impressive results ([truly outstanding!](https://www.theguardian.com/news/2018/may/06/cambridge-analytica-how-turn-clicks-into-votes-christopher-wylie)). They explained that, using machine learning, one could uncover a person's gender or personality to then send that person tailored political information. All too aware of the Swiss democracy's need for information, Baschi Dürr ordered his machine learning task force to congregate at once not to waste any time: Switzerland was not going to miss out on this amazing opportunity. America first, [Switzerland second](https://www.youtube.com/watch?v=reuJ8yVCgSM).
-
-(Names, characters, businesses, places, events, locales, and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.)
-
+(Namen, Organisationen, und Orten sind Produkt der Imagination des Autors. Jede Ähnlichkeit zu existierenden Personen ist absolut zufällig.) 
 
 ### A - Vorbereitung
 
@@ -129,7 +126,7 @@ library(tidyverse)
 
 ### B Wettbewerbsregeln
 
-1. Das Ziel des Wettbewerbs ist es den **schönsten**, **überzeugensten**, **entscheidungsrelevantesten** Plot zu erstellen in den Augen der anderen Kursteilnehmer zu erstellen. 
+1. Das Ziel des Wettbewerbs ist es die **schönste**, **überzeugenste**, **entscheidungsrelevanteste** Graphik zu erstellen, die beantwortet auf welche Besuchergruppen die Basler Tourismuswerbestrategie fokussieren sollte. 
 
 2. Am Wettbewerb teilzunehmen ermöglicht dir die Chance viel &#127851;&#127851;&#127851; zu gewinnen. 
 
@@ -153,6 +150,7 @@ ggsave(filename = "plot_PSEUDONYM.png",
 - [**Graphik einreichen**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)
 - [**Skript einreichen**](https://www.dropbox.com/request/03OHzgLFyAyRpXI9D1fW)
 
+6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
 
 Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
 
