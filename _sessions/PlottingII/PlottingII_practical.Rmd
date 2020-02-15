@@ -414,7 +414,7 @@ mein_theme <- theme(
     )
 ```
 
-2. Jetzt kriere einen neuen Plot mit anderen Variablen als zuvor und ergänze `mein_theme` (Ohne Klammern). 
+2. Jetzt kreiere einen neuen Plot mit anderen Variablen als zuvor und ergänze `mein_theme` (Ohne Klammern). 
 
 ```{r, echo = TRUE, eval = FALSE}
 ggplot(verbrechen, 
@@ -476,7 +476,7 @@ verbrechen_gg <- ggplot(data = verbrechen,
 verbrechen_gg
 ```
 
-2. Als erstes verwende `sclale_size()` und darin das `range` argument um die Grösse der Punkte zu verkleinern. Damit kannst du die Überlappung etwas veringern. Probiere ein paar Werte für die untere und obere Grenze aus, die jeweils kleiner als `10` sein sollten, um einen guten Trade-off zwischen Grösse und Überlappung zu finden.
+2. Als erstes verwende `sclale_size()` und darin das `range` argument um die Grösse der Punkte zu verkleinern. Damit kannst du die Überlappung etwas verringern. Probiere ein paar Werte für die untere und obere Grenze aus, die jeweils kleiner als `10` sein sollten, um einen guten Trade-off zwischen Grösse und Überlappung zu finden.
 
 ```{r, echo = TRUE, eval = FALSE}
 verbrechen_gg + scale_size(range = c(XX, XX))
@@ -486,7 +486,7 @@ verbrechen_gg + scale_size(range = c(XX, XX))
 verbrechen_gg + scale_size(range = c(.5, 3))
 ```
 
-3. Nun ändere die Farben mit `scale_color_colorblind()` (spezifische Version von `scale_color_gradient()`), so dass die Farben auch per Helligkeit voneinandeer abgrenzbar sind. 
+3. Nun ändere die Farben mit `scale_color_colorblind()` (spezifische Version von `scale_color_gradient()`), so dass die Farben auch per Helligkeit voneinander abgrenzbar sind. 
 
 ```{r, echo = TRUE, eval = FALSE}
 verbrechen_gg + 
@@ -556,7 +556,7 @@ In diesem Abschnitt lernst du mit dem `patchwork` Paket multiple Plots zusammenz
 
 4. Ändere das `theme` aller drei Plots gleichzeitig zu `theme_void()` mit dem `&`-Operator. 
 
-5. Speichere deine Plot als `.pdf` mit `ggsave()`.
+5. Speichere deinen Plot als `.pdf` mit `ggsave()`.
 
 
 ## Beispiele

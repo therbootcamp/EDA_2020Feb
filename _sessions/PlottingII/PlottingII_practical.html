@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -211,7 +199,7 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du weiter üben mit <code>ggplot2</code> publikationsfertige Grafiken zu erstellen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
@@ -380,7 +368,7 @@ $(document).ready(function () {
   ...
   )</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Jetzt kriere einen neuen Plot mit anderen Variablen als zuvor und ergänze <code>mein_theme</code> (Ohne Klammern).</li>
+<li>Jetzt kreiere einen neuen Plot mit anderen Variablen als zuvor und ergänze <code>mein_theme</code> (Ohne Klammern).</li>
 </ol>
 <pre class="r"><code>ggplot(verbrechen, 
        aes(x = XX, 
@@ -419,11 +407,11 @@ $(document).ready(function () {
 
 verbrechen_gg</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Als erstes verwende <code>sclale_size()</code> und darin das <code>range</code> argument um die Grösse der Punkte zu verkleinern. Damit kannst du die Überlappung etwas veringern. Probiere ein paar Werte für die untere und obere Grenze aus, die jeweils kleiner als <code>10</code> sein sollten, um einen guten Trade-off zwischen Grösse und Überlappung zu finden.</li>
+<li>Als erstes verwende <code>sclale_size()</code> und darin das <code>range</code> argument um die Grösse der Punkte zu verkleinern. Damit kannst du die Überlappung etwas verringern. Probiere ein paar Werte für die untere und obere Grenze aus, die jeweils kleiner als <code>10</code> sein sollten, um einen guten Trade-off zwischen Grösse und Überlappung zu finden.</li>
 </ol>
 <pre class="r"><code>verbrechen_gg + scale_size(range = c(XX, XX))</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Nun ändere die Farben mit <code>scale_color_colorblind()</code> (spezifische Version von <code>scale_color_gradient()</code>), so dass die Farben auch per Helligkeit voneinandeer abgrenzbar sind.</li>
+<li>Nun ändere die Farben mit <code>scale_color_colorblind()</code> (spezifische Version von <code>scale_color_gradient()</code>), so dass die Farben auch per Helligkeit voneinander abgrenzbar sind.</li>
 </ol>
 <pre class="r"><code>verbrechen_gg + 
   scale_size(range = c(XX, XX)) + 
@@ -465,7 +453,7 @@ verbrechen_gg</code></pre>
 <li><p>Stelle alle 3 Plots nebeneinander mit <code>verbrechen_a + verbrechen_b + verbrechen_c</code>.</p></li>
 <li><p>Stelle den 3. Plot unter die ersten beiden mit <code>verbrechen_a + verbrechen_b / verbrechen_c</code>.</p></li>
 <li><p>Ändere das <code>theme</code> aller drei Plots gleichzeitig zu <code>theme_void()</code> mit dem <code>&amp;</code>-Operator.</p></li>
-<li><p>Speichere deine Plot als <code>.pdf</code> mit <code>ggsave()</code>.</p></li>
+<li><p>Speichere deinen Plot als <code>.pdf</code> mit <code>ggsave()</code>.</p></li>
 </ol>
 </div>
 </div>
@@ -572,7 +560,7 @@ ggsave(filename = &quot;mein_plot_name&quot;,
        height = 4, 
        units = &quot;in&quot;)</code></pre>
 </div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <table>
 <thead>
@@ -815,6 +803,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
